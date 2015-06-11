@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :description
       t.string :contact_email
       t.integer :user_id
+      
 
       t.timestamps null: false
     end
