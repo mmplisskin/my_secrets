@@ -43,7 +43,7 @@ class PostController < ApplicationController
 	private
 
 		def post_params
-		  params.require(:post).require(:title, :description, :contact_email)
+		  params.require(:post).permit(:title, :description, :contact_email, :last_update)
 		end
 	end
 end
