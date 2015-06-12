@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-
+  #routes for user
   get "users" => "users#index"
   get "users/new" => "users#new"
   post "users" => "users#create"
+
+  #routes for session
+  get "login"     => 'sessions#new'
+  post "login"    => 'sessions#create'
+  delete "logout" => 'sessions#destroy'
 
   resources :posts
   # get "secrets" => "posts#index"
