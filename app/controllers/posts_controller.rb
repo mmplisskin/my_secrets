@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 
 	  def create
 	    @post = Post.new(post_params)
-	    if post.save
+	    if @post.save
 	      redirect_to posts_path
 	    else
 	      render :new
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
 	  def update
 	    @post = Post.find(post_params[:id])
-	    if post.update_attributes(post_params)
+	    if @post.update_attributes(post_params)
 	      redirect_to posts_path
 	    else
 	      render :edit
