@@ -11,19 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150611231612) do
+ActiveRecord::Schema.define(version: 20150613002502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "postrecipients", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "recipient_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "postrecipients", ["post_id"], name: "index_postrecipients_on_post_id", using: :btree
+  add_index "postrecipients", ["recipient_id"], name: "index_postrecipients_on_recipient_id", using: :btree
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.string   "contact_email"
     t.integer  "user_id"
     t.datetime "last_update"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "recipients", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,4 +50,6 @@ ActiveRecord::Schema.define(version: 20150611231612) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "postrecipients", "posts"
+  add_foreign_key "postrecipients", "recipients"
 end

@@ -3,7 +3,6 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.string :description
-      t.string :contact_email
       t.integer :user_id
       t.datetime :last_update
       t.timestamps null: false
