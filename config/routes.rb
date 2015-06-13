@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'recipients/index'
+
+  get 'recipients/show'
+
+  get 'recipients/new'
+
+  get 'recipients/edit'
+
+  get 'recipients/create'
+
+  get 'recipients/update'
+
+  get 'recipients/destroy'
+
   #routes for user
   get "users" => "users#index"
   get "users/new" => "users#new"

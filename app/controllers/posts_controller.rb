@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 	  end
 
 	  def update
-	    @post = Post.find(post_params[:id])
+	    @post = Post.find(params[:id])
 	    if @post.update_attributes(post_params)
 	      redirect_to posts_path
 	    else
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
 
 	private
 		def post_params
-		  params.require(:post).permit(:title, :description, :contact_email, :last_update)
+		  params.require(:post).permit(:title, :description, :contact_email, :last_update, recipient_ids: [])
 
     end
 	end
