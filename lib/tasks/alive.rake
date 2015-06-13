@@ -1,14 +1,27 @@
 namespace :db do
   desc "Checks db for inactive users"
   task :alive => :environment do
-  @post = Post.where("last_update <= ?", 30.days.ago)
-  puts "#{@post}"
-  puts "..^ this is the post"
 
-@post.each do |secret|
-    puts "in the loop"
-    puts "#{secret.title}"
-  end
+    posts = Post.where("last_update > ?", 1.day.ago)
+
+    posts.each do |post|
+
+      puts  @title = post.title
+      puts @description = post.description
+
+      user = User.find(post.user_id)
+      puts @name = user.name
+
+      contact = Postrecipient.find(post.id)
+
+      contact = Recipient.find(contact.recipient_id)
+
+      puts @email = contact.email
+
+      puts @name = contact.name
+
+
+    end
 
   end
 end
