@@ -6,12 +6,10 @@
 
   <%= f.text_field :title %>
 
-  <%= f.text_field :contact_email %>
-
   <%= f.text_area :description %>
 
   <%= f.collection_check_boxes :recipient_ids, Recipient.all, :id, :name %>
- 
+
 <center>
   <%= f.submit %>
 </center>
