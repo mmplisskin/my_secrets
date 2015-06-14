@@ -9,17 +9,20 @@ namespace :db do
       puts  @title = post.title
       puts @description = post.description
 
-      # user = User.find(post.user_id)
-      # puts @name = user.name
       puts  @name = post.user.name
 
+      post.recipients.each do |recipient|
+          puts  recipient["email"]
+      end
 
+        # user = User.find(post.user_id)
+        # puts @name = user.name
 
       # contact = Postrecipient.find(post.id)
       #
       # contact = Recipient.find(contact.recipient_id)
 
-      puts @contact = post.recipients.first
+
 
       # puts @email = post.recipients.name
       # puts @email = contact.email
