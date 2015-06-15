@@ -10,6 +10,8 @@
 
   <%= f.collection_check_boxes :recipient_ids, Recipient.all, :id, :name %>
 
+  <%#= f.text_field :description, 'data-role'=>'tagsinput' %>
+
 <center>
   <%= f.submit %>
 </center>

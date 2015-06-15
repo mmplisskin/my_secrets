@@ -15,4 +15,13 @@ class UserMailer < ApplicationMailer
   #     sent_on       Time.now
   #     body          {}
   #   end
+  def welcome(user)
+    @greeting = "Hi #{user.name}"
+
+    mail to: user.email, subject: "Welcome To My Secrets"
+  end
+
+
+
+
 end
