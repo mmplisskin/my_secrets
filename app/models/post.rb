@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :user
-  has_and_belongs_to_many :recipients
+  has_many :post_recipients
+  has_many :recipients, through: :post_recipients
+
 end
