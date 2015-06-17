@@ -12,9 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+// = require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
 //= require semantic-ui
 //= require semantic-ui/modal
 //= require semantic-ui/dropdown
+
+
+
+
+
+ $(function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });
+  });

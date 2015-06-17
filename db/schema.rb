@@ -26,16 +26,6 @@ ActiveRecord::Schema.define(version: 20150616011530) do
   add_index "post_recipients", ["post_id"], name: "index_post_recipients_on_post_id", using: :btree
   add_index "post_recipients", ["recipient_id"], name: "index_post_recipients_on_recipient_id", using: :btree
 
-  create_table "postrecipients", force: :cascade do |t|
-    t.integer  "post_id"
-    t.integer  "recipient_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  add_index "postrecipients", ["post_id"], name: "index_postrecipients_on_post_id", using: :btree
-  add_index "postrecipients", ["recipient_id"], name: "index_postrecipients_on_recipient_id", using: :btree
-
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
@@ -62,6 +52,4 @@ ActiveRecord::Schema.define(version: 20150616011530) do
 
   add_foreign_key "post_recipients", "posts"
   add_foreign_key "post_recipients", "recipients"
-  add_foreign_key "postrecipients", "posts"
-  add_foreign_key "postrecipients", "recipients"
 end
