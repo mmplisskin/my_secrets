@@ -33,6 +33,7 @@ gem 'bootstrap_form'
 
 gem 'font-awesome-sass'
 
+gem 'nested_form'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

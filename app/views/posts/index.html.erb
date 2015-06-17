@@ -2,9 +2,11 @@
 
 	<% @posts.each do |post| %>
 
-	<%= post.title %>
+		<%= post.title %>
 
-	<%= post.description %>
+		<%= post.description %>
+		<%= post.recipients.first %>
+	<%end%>
+		
 
 
-<%end%>
