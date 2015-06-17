@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   post "login"    => 'sessions#create'
   delete "logout" => 'sessions#destroy'
 
-  resources :posts
+  resources :posts 
   # get "secrets" => "posts#index"
   # get "secrets/new" => "secrets#new"
 

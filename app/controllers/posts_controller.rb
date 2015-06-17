@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
     def new
       @post = Post.new
-	  	@post.recipients.build
+			@post.recipients.build
 
     end
 
@@ -27,10 +27,11 @@ class PostsController < ApplicationController
 
 
 		@post = Post.new(post_params)
-		@post.user = current_user
-		@post.recipients.build(params[:email])
+		# @post.user = current_user
+		# @post.recipientsc(params[:email])
 
 	if @post.save
+			@post.recipients.create(email: params[:email])
 			redirect_to posts_path
 		else
 			render :new
@@ -59,7 +60,7 @@ class PostsController < ApplicationController
 
 	private
 		def post_params
-		  params.require(:post).permit(:title, :description, :contact_email, :last_update, recipient_attributes: [:email, :id])
+		  params.require(:post).permit(:title, :description, :contact_email, :last_update, recipients_attributes: [:email])
 
     	end
 	end
