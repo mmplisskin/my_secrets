@@ -10,10 +10,11 @@
 
 
 
-		<%= bootstrap_nested_form_for :recipients do |b|%>
-			<%= b.text_field :email %>
+	<%= f.fields_for :recipients do |recipient| %>
 
-		
+	<%= recipient.text_field :email %>
+
+
 	<%#= f.collection_check_boxes :recipient_ids, Recipient.all, :id, :name %>
 
 	<%#= f.text_field :description, 'data-role'=>'tagsinput' %>
@@ -21,6 +22,7 @@
 		<center>
 	  		<%= f.submit %>
 		</center>
-	<% end %>
- 	
+
+		<% end %>
+
 <% end %>
