@@ -1,12 +1,13 @@
+
+
 <h1>Secrets</h1>
 
-	<% @posts.each do |post| %>
+	<div id="accordion">
 
-		<%= post.title %>
-
-		<%= post.description %>
-		<%= post.recipients.first %>
-	<%end%>
-		
-
-
+		<% @posts.each do |post| %>
+			<h3><%= post.title %> </h3>
+				<div>
+					<p>	<%= post.description %></p>
+				</div>
+		<%end%>
+ 	</div>
