@@ -7,10 +7,12 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+		@post.recipients.build
 
   end
 
 	def show
+
 		@post = Post.find(params[:id])
 	end
 
@@ -28,7 +30,10 @@ class PostsController < ApplicationController
 	end
 
 	def edit
+		# binding.pry
 		@post = Post.find(params[:id])
+		recipient=Recipient.find_or_create_by(email: params[:email])
+
 
 	end
 
@@ -49,7 +54,7 @@ class PostsController < ApplicationController
 
 	private
 		def post_params
-		  params.require(:post).permit(:title, :description, :contact_email, :last_update, recipients_attributes: [:email])
+		  params.require(:post).permit(:title, :description, :contact_email, :last_update, recipients_attributes: [:email, :id])
 
     	end
 	end

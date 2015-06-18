@@ -8,6 +8,11 @@
 				<div>
 					<br>
 						<p>	<%= post.description %></p>
+						<% post.recipients.each do |r| %>
+						<p><%=r.email%>
+							<%end%>
+						</p>
+
 					<br>
 				</div>
 		<%end%>
