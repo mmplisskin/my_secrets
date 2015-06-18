@@ -38,9 +38,12 @@ ActiveRecord::Schema.define(version: 20150616011530) do
   create_table "recipients", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "recipients", ["user_id"], name: "index_recipients_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -52,4 +55,5 @@ ActiveRecord::Schema.define(version: 20150616011530) do
 
   add_foreign_key "post_recipients", "posts"
   add_foreign_key "post_recipients", "recipients"
+  add_foreign_key "recipients", "users"
 end
