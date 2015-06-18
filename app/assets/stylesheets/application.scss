@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery-ui
+ *= require bootstrap-tagsinput
  */
 
  @import "bootstrap-sprockets";
@@ -39,4 +41,8 @@ body {
 
 .b{
   color:black;
+}
+
+.bootstrap-tagsinput {
+  width: 100% !important;
 }

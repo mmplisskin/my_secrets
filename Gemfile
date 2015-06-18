@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+gem 'jquery-turbolinks'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -34,6 +36,10 @@ gem 'bootstrap_form'
 gem 'font-awesome-sass'
 
 gem 'nested_form'
+
+gem 'jquery-ui-rails'
+
+gem 'semantic-ui-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -41,7 +47,17 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'bootstrap-tagsinput-rails'
+
 gem 'figaro'
+
+gem 'geocoder'
+
+
+group :production do
+
+    gem 'rails_12factor'
+  end
 
 
 group :development, :test do
