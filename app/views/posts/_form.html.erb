@@ -10,11 +10,11 @@
 
 
 
-	<%= f.fields_for :recipient do |recipient| %>
+	<%= f.fields_for :recipients do |recipient| %>
 
 	<%= recipient.text_field :email %>
 
-
+	<% end %>
 	<%#= f.collection_check_boxes :recipient_ids, Recipient.all, :id, :name %>
 
 	<%#= f.text_field :description, 'data-role'=>'tagsinput' %>
@@ -23,6 +23,6 @@
 	  		<%= f.submit %>
 		</center>
 
-		<% end %>
+
 
 <% end %>

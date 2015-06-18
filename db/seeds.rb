@@ -5,14 +5,41 @@
 #
   # cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
   # Mayor.create(name: 'Emanuel', city: cities.first)
+  # Build a list to be used for users and posts
+  nums = ["first", "second", "third"]
 
-recipients=Recipient.create([{name: 'linda',email: 'linda@linda'}])
-recipients=Recipient.create([{name: 'andrew',email: 'Andrew@a.com'}])
+  # Build a list to be used for potential recipients
+  recv = ["one", "two", "three", "four", "five"]
 
-post=Post.create([{title: "myBitcoins", description: 'they are cool', user_id:1, last_update: Time.now}])
+  # Iterate over the list of items to be created for users and posts
+  nums.each do |num|
 
-user=User.create([{name: 'Sam', email: 'sam@sam', password:'12345'}])
+      # Create the user
+      u = User.create(name: num + " user", email: num + "@gmail.com")
 
+      # Loop again to then create the posts for this user
+      nums.each do |num|
 
-postr = PostRecipient.create([{post_id: 1, recipient_id: 1}])
-postr = PostRecipient.create([{post_id: 1, recipient_id: 2}])
+          # Create the post
+          post = u.posts.create(title: num + " post", description: num + " description")
+
+          # Grab two random recipients and loop them
+          recv.sample(2).each do |r|
+
+              # Find the recipient (or create it if it doesn't exist)
+              recipient = Recipient.find_or_create_by(user_id: u.id, email: r + "@recipient.com") do |rec|
+
+                  # This internal block only runs when a recipient needs to be created
+                  puts "Now creating recipient: " + r + " for user: " + u.name
+                  rec.name = "Recipient " + r
+
+              end
+
+              # Associate the recipient with the post
+              post.recipients << recipient
+
+          end
+
+      end
+
+  end
