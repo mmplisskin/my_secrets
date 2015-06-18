@@ -12,7 +12,7 @@
 
 	<%= f.fields_for :recipients do |recipient| %>
 
-	<%= recipient.text_field :email %>
+	<%= recipient.text_field :email, 'data-role'=> 'tagsinput' %>
 
 	<% end %>
 	<%#= f.collection_check_boxes :recipient_ids, Recipient.all, :id, :name %>

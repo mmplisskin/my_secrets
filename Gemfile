@@ -40,8 +40,11 @@ gem 'nested_form'
 gem 'jquery-ui-rails'
 
 gem 'semantic-ui-rails'
+
+gem 'bootstrap-tagsinput-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'jquery-turbolinks'
 
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 

@@ -1,9 +1,9 @@
 <div class="ui inverted menu">
-  
-  <a <%= link_to "Posts", posts_path, class: 'active item' %>></a>
-  <!-- <a href="posts" class="active item"> -->
-    <i class="home icon"></i> Home
-  <!-- </a> -->
+
+
+  <a class="item" <%=link_to"Home", root_path, class:'fa fa-diamond' %>>Home
+
+  </a>
   <a href="posts" class="item">
     <i class="fa fa-diamond"></i> Secrets
   </a>
@@ -11,3 +11,6 @@
     <i class="fa fa-user-secret"></i> Account
   </a>
 </div>
+
+
+<%#= link_to "Posts", posts_path, class: 'active item' %>
