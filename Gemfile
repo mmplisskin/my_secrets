@@ -47,7 +47,17 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+
 gem 'figaro'
+
+gem 'geocoder'
+
+
+group :production do
+
+    gem 'rails_12factor'
+  end
 
 
 group :development, :test do
