@@ -34,6 +34,11 @@ gem 'bootstrap_form'
 gem 'font-awesome-sass'
 
 gem 'nested_form'
+
+
+gem 'less-rails-semantic_ui'
+
+gem 'autoprefixer-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
