@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+  
+  validates :title, presence: true
+  validates :description, presence: true
   belongs_to :user
   has_many :post_recipients
   has_many :recipients, through: :post_recipients
