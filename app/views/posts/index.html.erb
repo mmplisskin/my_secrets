@@ -1,19 +1,22 @@
 
-
-<h1>Secrets</h1>
-<%= render 'layouts/ok_new' %>
+<center>
+		<h1>Secrets</h1>
+</center>
+<div class="col-md-10">
+		<%= render 'layouts/ok_new' %>
 	<div id="accordion">
 		<% @posts.each do |post| %>
 			<h3><%= post.title %> </h3>
 				<div>
 					<br>
 						<p>	<%= post.description %></p>
-						<% post.recipients.each do |r| %>
-						<p><%=r.email%>
-							<%end%>
-						</p>
+							<% post.recipients.each do |r| %>
+						<p><%= r.email %></p>
+								<% end %>
+						<p>	<%= link_to "Edit this", edit_post_path(post.id)%> </p>
 
 					<br>
 				</div>
 		<%end%>
  	</div>
+</div>

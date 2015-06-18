@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery_nested_form
 //= require turbolinks
@@ -19,6 +20,7 @@
 //= require semantic-ui
 //= require semantic-ui/modal
 //= require semantic-ui/dropdown
+//= require jquery-ui
 
 
 
