@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require bootstrap-tagsinput
 //= require jquery_nested_form
 //= require turbolinks
 //= require bootstrap-sprockets
@@ -21,7 +22,6 @@
 //= require semantic-ui/modal
 //= require semantic-ui/dropdown
 //= require jquery-ui
-
 
 
 
@@ -35,3 +35,5 @@
 
     );
   });
+
+$("input").tagsinput('items')
