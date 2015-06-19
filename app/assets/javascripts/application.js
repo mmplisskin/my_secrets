@@ -17,11 +17,11 @@
 //= require jquery_nested_form
 //= require turbolinks
 //= require bootstrap-sprockets
-//= require_tree .
+//= require jquery-ui
 //= require semantic-ui
 //= require semantic-ui/modal
 //= require semantic-ui/dropdown
-//= require jquery-ui
+//= require_tree .
 
 
 
@@ -35,9 +35,3 @@
 
     );
   });
-
-$("input").tagsinput('items')
-
-$('input').tagsinput({
-  confirmKeys: [13, 44, 32]
-});
