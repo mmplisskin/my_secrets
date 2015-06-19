@@ -10,4 +10,19 @@
   <a href="users" class="item">
     <i class="fa fa-user-secret"></i> Account
   </a>
+<% if current_ouser %>
+        <ul class="nav navbar-nav pull-right">
+          <li><%= image_tag current_ouser.image_url, alt: current_ouser.name %></li>
+          <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+        </ul>
+
+      <% else %>
+          <a href='/auth/facebook' class="item">
+          <i class="fa fa-user-secret"></i> Facebook
+          <a href='/auth/google' class="item">
+          <i class="fa fa-user-secret"></i> Google+
+      <% end %>
+</ul>
 </div>
+
+

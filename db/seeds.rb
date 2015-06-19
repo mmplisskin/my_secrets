@@ -15,7 +15,7 @@
   nums.each do |num|
 
       # Create the user
-      u = User.create(name: num + " user", email: num + "@gmail.com", last_update: Time.now )
+      u = Ouser.create(name: num + " user", email: num + "@gmail.com", last_update: Time.now )
 
       # Loop again to then create the posts for this user
       nums.each do |num|
@@ -27,7 +27,7 @@
           recv.sample(2).each do |r|
 
               # Find the recipient (or create it if it doesn't exist)
-              recipient = Recipient.find_or_create_by(user_id: u.id, email: r + "@recipient.com") do |rec|
+              recipient = Recipient.find_or_create_by(ouser_id: u.id, email: r + "@recipient.com") do |rec|
 
                   # This internal block only runs when a recipient needs to be created
                   puts "Now creating recipient: " + r + " for user: " + u.name
