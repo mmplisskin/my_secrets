@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616011530) do
+ActiveRecord::Schema.define(version: 20150619182935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ousers", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "email"
+    t.string   "location"
+    t.string   "image_url"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "post_recipients", force: :cascade do |t|
     t.integer  "post_id"
@@ -30,6 +42,7 @@ ActiveRecord::Schema.define(version: 20150616011530) do
     t.string   "title"
     t.string   "description"
     t.integer  "user_id"
+    t.datetime "last_update"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -45,7 +58,6 @@ ActiveRecord::Schema.define(version: 20150616011530) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "last_update"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

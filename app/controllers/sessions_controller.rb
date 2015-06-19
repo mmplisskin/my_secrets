@@ -14,15 +14,15 @@ class SessionsController < ApplicationController
 		# end
   # end
     def create
-	    @user = User.from_omniauth(request.env['omniauth.auth'])
-	    session[:user_id] = @user.id
-	    flash[:success] = "Welcome, #{@user.name}!"
+	    @ouser = Ouser.from_omniauth(request.env['omniauth.auth'])
+	    session[:ouser_id] = @ouser.id
+	    flash[:success] = "Welcome, #{@ouser.name}!"
 
 	 	redirect_to root_path
 	end
 
 	def destroy
-		session.delete(:user_id)
+		session.delete(:ouser_id)
 		redirect_to login_path
 	end
 end
