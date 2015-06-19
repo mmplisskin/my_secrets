@@ -17,12 +17,8 @@ namespace :db do
         end
       end
 
-
       #fix this should push in array or something
       # puts @recipients = recipient.class
-
-
-
 
   end
 end
