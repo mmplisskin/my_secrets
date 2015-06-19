@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
 	def index
 		@users = User.all
-		location = request.safe_location
-		@longitude = location.data['longitude']
-		@latitude = location.data['latitude']
+	
 	end
 
 
