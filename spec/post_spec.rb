@@ -15,5 +15,6 @@ RSpec.describe Post, type: :model do
 		post = Post.new(title: "First Post Title", description: "First Post Description")
     	expect(post).to be_valid
   	end 
+
 end
 
