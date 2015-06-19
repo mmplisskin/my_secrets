@@ -52,6 +52,8 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'figaro'
 #allows auth via facebook
 gem 'omniauth-facebook'
+#allows auth via google
+gem "omniauth-google-oauth2"
 
 gem 'geocoder'
 
