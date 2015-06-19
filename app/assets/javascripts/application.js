@@ -11,27 +11,15 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
+
 //= require jquery_ujs
 //= require bootstrap-tagsinput
-//= require jquery_nested_form
+
 //= require turbolinks
 //= require bootstrap-sprockets
-//= require jquery-ui
 //= require semantic-ui
 //= require semantic-ui/modal
 //= require semantic-ui/dropdown
 //= require_tree .
 
-
-
-
- $(function() {
-    $( "#accordion" ).accordion(
-      {
-      active: false,
-      collapsible: true
-      }
-
-    );
-  });
+// console.log("//= require jquery.turbolinks")
