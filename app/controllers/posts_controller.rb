@@ -5,14 +5,13 @@ class PostsController < ApplicationController
 		@posts = Post.all
 	end
 
-  def new
-    @post = Post.new
+	def new
+    	@post = Post.new
 		@post.recipients.build
 
-  end
+  	end
 
 	def show
-
 		@post = Post.find(params[:id])
 	end
 
@@ -21,7 +20,7 @@ class PostsController < ApplicationController
 		recipient=Recipient.find_or_create_by(email: params[:email])
 
 
-	if @post.save
+		if @post.save
 			@post.recipients << recipient
 			redirect_to posts_path
 		else
