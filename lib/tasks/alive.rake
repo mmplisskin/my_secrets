@@ -11,6 +11,7 @@ namespace :db do
         puts "=== here is a " + user.email + " dead guy ===="  #loop over all of their posts
            user.posts.each do |post|
             puts "=== here is  " + user.email + " " + post.title + " secret ===="
+
               @title = post.title
               @description = post.description
               #get the user to send to
