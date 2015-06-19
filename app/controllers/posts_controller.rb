@@ -3,16 +3,32 @@ class PostsController < ApplicationController
 
 	def index
 		@posts = Post.all
+			respond_to do |format|
+	        format.html {
+	            render
+	        }
+	        format.json {
+	            render json: @posts
+	        }
+	    end
 	end
 
 	def new
     	@post = Post.new
-		@post.recipients.build
+			@post.recipients.build
 
   	end
 
 	def show
 		@post = Post.find(params[:id])
+			respond_to do |format|
+					format.html {
+							render
+					}
+					format.json {
+							render json: @posts
+					}
+			end
 	end
 
 	def create
