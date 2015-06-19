@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# gem 'jquery-turbolinks'
+gem 'jquery-turbolinks'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -50,6 +50,8 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 # gem 'bootstrap-tagsinput-rails'
 
 gem 'figaro'
+#allows auth via facebook
+gem 'omniauth-facebook'
 
 gem 'geocoder'
 
