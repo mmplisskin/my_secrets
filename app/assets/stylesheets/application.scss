@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require jquery-ui
  *= require bootstrap-tagsinput
  */
 
@@ -35,8 +34,9 @@ textarea {
 }
 
 body {
-    background-image: url("/assets/bg_sliver.png");
+    background-image: url('bg_sliver.png');
     background-repeat: repeat-x;
+    background-attachment: fixed;
 }
 
 .b{

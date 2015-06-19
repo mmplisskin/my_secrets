@@ -15,7 +15,7 @@
   nums.each do |num|
 
       # Create the user
-      u = User.create(name: num + " user", email: num + "@gmail.com")
+      u = User.create(name: num + " user", email: num + "@gmail.com", last_update: Time.now )
 
       # Loop again to then create the posts for this user
       nums.each do |num|

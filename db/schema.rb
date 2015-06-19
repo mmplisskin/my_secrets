@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20150616011530) do
     t.string   "title"
     t.string   "description"
     t.integer  "user_id"
-    t.datetime "last_update"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -46,6 +45,7 @@ ActiveRecord::Schema.define(version: 20150616011530) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
+    t.datetime "last_update"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
