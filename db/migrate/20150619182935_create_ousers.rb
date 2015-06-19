@@ -8,6 +8,9 @@ class CreateOusers < ActiveRecord::Migration
       t.string :location
       t.string :image_url
       t.string :url
+      t.datetime :last_update
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps null: false
     end
