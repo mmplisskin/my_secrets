@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   get 'recipients/destroy'
 
   #routes for user
-  get "users" => "users#index"
-  get "users/new" => "users#new"
-  post "users" => "users#create"
+  # get "users" => "users#index"
+  # get "users/new" => "users#new"
+  # post "users" => "users#create"
 
   #routes for session
   get "login"     => 'sessions#new'
@@ -20,8 +20,8 @@ Rails.application.routes.draw do
   #route for oauth
   get '/auth/:provider/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  
-  resources :posts 
+
+  resources :posts
   # get "secrets" => "posts#index"
   # get "secrets/new" => "secrets#new"
 
@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'posts#index'
 
+  # get "posts/ok" => "posts#ok", as: :ok
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -80,4 +81,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
 end
