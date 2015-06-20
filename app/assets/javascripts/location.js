@@ -1,8 +1,3 @@
-
-
-
-
-
 function initialize() {
   console.log("init")
     var x = document.getElementById("location")

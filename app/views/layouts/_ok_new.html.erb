@@ -1,5 +1,7 @@
 <h2>
   <%= link_to "", new_post_path, class: 'fa fa-plus-square b'  %>
-  <%= link_to "I Am Ok", root_path, class: 'fa fa-refresh b'  %>
+  <%= link_to "I Am Ok", root_path, class: 'fa fa-refresh b',
+      method: :ok,
+      data: {confirm: 'Good to hear from you!'}%>
   	<p id="location"></p>
 </h2>
