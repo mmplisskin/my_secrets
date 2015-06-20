@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
 
 	def index
-		@posts = Post.all
+		@posts = Post.where(ouser_id: current_ouser.id)
 			respond_to do |format|
 	        format.html {
 	            render
@@ -33,6 +33,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
+		@post.ouser_id = current_ouser.id if current_ouser
 		recipient=Recipient.find_or_create_by(email: params[:email])
 
 
