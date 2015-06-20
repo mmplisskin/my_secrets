@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   	protect_from_forgery with: :exception
 
 private
- 
+
 	def current_ouser
   		@current_ouser ||= Ouser.find_by(id: session[:ouser_id])
 	end
- 
+
 	helper_method :current_ouser
 end

@@ -1,7 +1,7 @@
 <div class="ui inverted menu">
-  
-  <a <%= link_to "Posts", posts_path, class: 'active item' %>></a>
-  <!-- <a href="posts" class="active item"> -->
+
+  <%= link_to "Posts", posts_path, class: 'active item' %>
+
     <i class="home icon"></i> Home
   <!-- </a> -->
   <a href="posts" class="item">
@@ -10,19 +10,22 @@
   <a href="users" class="item">
     <i class="fa fa-user-secret"></i> Account
   </a>
-<% if current_ouser %>
+
+<% if current_user %>
         <ul class="nav navbar-nav pull-right">
           <li><%= image_tag current_ouser.image_url, alt: current_ouser.name %></li>
           <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
         </ul>
 
       <% else %>
-          <a href='/auth/facebook' class="item">
+        <ul class="nav navbar-nav pull-right">
+      <li> <%= link_to "Facebook", "/auth/facebook" %> </li>
+      <li> <%= link_to "Google", "/auth/google" %> </li>
+        <%#= link_to "Facebook", "/auth/facebook" %>
+          <!-- <a href='/auth/facebook' class="item">
           <i class="fa fa-user-secret"></i> Facebook
           <a href='/auth/google' class="item">
-          <i class="fa fa-user-secret"></i> Google+
-      <% end %>
+          <i class="fa fa-user-secret"></i> Google+ -->
+<% end %>
 </ul>
 </div>
-
-

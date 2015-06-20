@@ -46,4 +46,4 @@ function initialize() {
   getLocation()
 
 }
-$(document).on("ready page:load", initialize);
+// $(document).on("ready page:load", initialize);
