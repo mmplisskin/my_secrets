@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
 		# if user && user.authenticate(params[:login][:password])
 		# 	session[:user_id] = user.id.to_s
-		# 	redirect_to root_path 
+		# 	redirect_to root_path
 		# 	# notice: "Successfully logged in!"
 		# else
 		# 	render :new
@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
 	    @ouser = Ouser.from_omniauth(request.env['omniauth.auth'])
 	    session[:ouser_id] = @ouser.id
 	    flash[:success] = "Welcome, #{@ouser.name}!"
+			UserMailer.welcome_email(@ouser).deliver
 
 	 	redirect_to root_path
 	end

@@ -1,29 +1,31 @@
 class UserMailer < ApplicationMailer
 
-  # default from: '@example.com'
-  #
-  # def welcome(user)
-	#     @greeting = "Hi #{user.name}"
-	#     mail to: user.email
-	#   end
+  def secrets_email(title,description,inac_name,recipient)
 
-    def secrets_email(title,description,name,email, recipient)
-        @name = name
-        @title = title
-        @description = description
-        @name = name
-        @recipient = recipient
-        @greeting = "Hello, #{@name} has a mesage for you from beyond time. #{@title}, #{description}"
+      @title = title
+      @description = description
+      @inac_name = inac_name
+      @recipient = recipient
+      @greeting = "Hello, #{@inac_name} has a mesage for you from beyond time. #{@title}, #{@description}, "
 
 
-        mail to: recipient, subject: "#{@name} has a secret for you "
+      mail to: @recipient, subject: "#{@inac_name} has a secret for you "
 
     end
 
-  def welcome(user)
-    @greeting = "Hi #{user.name}"
+  def welcome_email(ouser)
 
-    mail to: user.email, subject: "Welcome To My Secrets"
+    if ouser.created_at > 1.minutes.ago
+        @title = "Great to have you #{ouser.name}"
+        @subject = "Welcome! #{ouser.name}"
+        @greeting = "Congrats  #{ouser.name}. You have made a brilliant decision to keep your digital legacy safe! "
+    else
+      @title = "Cheers #{ouser.name}"
+      @subject = "Good to know that everything is still awesome #{ouser.name}!"
+      @greeting = "Welcome back #{ouser.name}. Your secrets are still safe!"
+    end
+
+    mail to: ouser.email, subject: @subject
   end
 
 
