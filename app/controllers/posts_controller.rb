@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   	end
 
 	def ok
-		
+
 
 	end
 
@@ -38,11 +38,13 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
+
 		recipient=Recipient.find_or_create_by(email: params[:email])
 
 
 		if @post.save
 			@post.recipients << recipient
+			@post.ouser_id = current_ouser.id
 			redirect_to posts_path
 		else
 			render :new
