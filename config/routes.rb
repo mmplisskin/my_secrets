@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   #route for oauth
   get '/auth/:provider/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  
+  post 'i_am_ok'=> 'ousers#imalive'
 
   resources :posts
   # get "secrets" => "posts#index"
