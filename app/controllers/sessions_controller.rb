@@ -16,6 +16,8 @@ class SessionsController < ApplicationController
     def create
 	    @ouser = Ouser.from_omniauth(request.env['omniauth.auth'])
 	    session[:ouser_id] = @ouser.id
+	    @ouser.last_update = Time.now
+	    @ouser.save
 	    flash[:success] = "Welcome, #{@ouser.name}!"
 			UserMailer.welcome_email(@ouser).deliver
 
