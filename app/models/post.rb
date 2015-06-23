@@ -1,7 +1,8 @@
 class Post < ActiveRecord::Base
 
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: true, length: {minimum: 8}
   validates :description, presence: true
+
   belongs_to :ouser
   has_many :post_recipients,  dependent: :delete_all
   has_many :recipients, through: :post_recipients
