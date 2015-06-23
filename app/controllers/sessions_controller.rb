@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 	    flash[:success] = "Welcome, #{@ouser.name}!"
 			UserMailer.welcome_email(@ouser).deliver
 
-	 	redirect_to root_path
+	 	redirect_to posts_path
 	end
 
 	def destroy
