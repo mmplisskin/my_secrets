@@ -14,6 +14,10 @@
 						<p><%= r.email %></p>
 								<% end %>
 						<p>	<%= link_to "Edit this", edit_post_path(post.id)%> </p>
+						<%= link_to 'delete', post, :method => :delete, :confirm => "You sure?",
+                                :title => "Delete #{post.id}" %>
+						<i class="fa fa-trash-o"></i>
+
 
 					<br>
 				</div>

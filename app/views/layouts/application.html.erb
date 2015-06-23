@@ -4,7 +4,7 @@
   <title>MySecrets</title>
   <script src="//maps.googleapis.com/maps/api/js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
   	<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -14,7 +14,7 @@
 <body>
   <%= render 'layouts/nav' %>
     <div class="container">
-  
+
       <%= params %>
 
     <%= yield %>

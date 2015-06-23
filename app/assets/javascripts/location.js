@@ -1,8 +1,3 @@
-
-
-
-
-
 function initialize() {
   console.log("init")
     var x = document.getElementById("location")
@@ -32,7 +27,7 @@ function initialize() {
 
 
   function ajax(lat,long){
-          console.log("yes");
+          console.log("yes ajax");
     $.ajax({
 
 
@@ -46,4 +41,18 @@ function initialize() {
   getLocation()
 
 }
+
+
+
+function get(){
+
+    $( '#okbtn' ).click(function() {
+      initialize
+      console.log('get running')
+    });
+}
+
+
+$(document).on("ready page:load", get);
+
 // $(document).on("ready page:load", initialize);

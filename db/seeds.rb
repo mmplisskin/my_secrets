@@ -7,7 +7,7 @@
   # Mayor.create(name: 'Emanuel', city: cities.first)
   # Build a list to be used for users and posts
   nums = ["first", "second", "third"]
-
+  #
   # Build a list to be used for potential recipients
   recv = ["one", "two", "three", "four", "five"]
 

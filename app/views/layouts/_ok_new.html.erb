@@ -1,5 +1,7 @@
 <h2>
   <%= link_to "", new_post_path, class: 'fa fa-plus-square b'  %>
-  <%= link_to "I Am Ok", root_path, class: 'fa fa-refresh b'  %>
+  <%= link_to "I Am Ok", i_am_ok_path, class: 'fa fa-refresh b', id: 'okbtn',
+      method: :ok, remote: true %>
   	<p id="location"></p>
 </h2>
+<!-- data: {confirm: "Good To hear from you!"},  -->

@@ -3,7 +3,7 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 //
 
-$("select").tagsinput('items')
+// $("select").tagsinput('items')
 
 
 

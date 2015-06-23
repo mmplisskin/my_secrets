@@ -1,31 +1,31 @@
 <div class="ui inverted menu">
 
-  <%= link_to "Posts", posts_path, class: 'active item' %>
+  <%= link_to '<i class="fa fa-diamond"></i> Login'.html_safe, login_path, class: 'btn btn-hidden'%>
+  <%= link_to '<i class="fa fa-lock"></i> Secrets'.html_safe, posts_path, class: 'btn btn-hidden'%>
+  <%= link_to '<i class="fa fa-user-secret"></i> Account'.html_safe, posts_path, class: 'btn btn-hidden'%>
 
-    <i class="home icon"></i> Home
-  <!-- </a> -->
-  <a href="posts" class="item">
-    <i class="fa fa-diamond"></i> Secrets
-  </a>
-  <a href="users" class="item">
-    <i class="fa fa-user-secret"></i> Account
-  </a>
 
-<% if current_user %>
+<% if current_ouser %>
         <ul class="nav navbar-nav pull-right">
-          <li><%= image_tag current_ouser.image_url, alt: current_ouser.name %></li>
-          <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+          <%= image_tag current_ouser.image_url, alt: current_ouser.name %>
+          <%= link_to '<i class="fa fa-sign-out"></i> Log Out'.html_safe, logout_path, method: :delete, class: 'btn btn-hidden'%>
         </ul>
 
       <% else %>
         <ul class="nav navbar-nav pull-right">
-      <li> <%= link_to "Facebook", "/auth/facebook" %> </li>
-      <li> <%= link_to "Google", "/auth/google" %> </li>
-        <%#= link_to "Facebook", "/auth/facebook" %>
-          <!-- <a href='/auth/facebook' class="item">
-          <i class="fa fa-user-secret"></i> Facebook
-          <a href='/auth/google' class="item">
-          <i class="fa fa-user-secret"></i> Google+ -->
+        <%= link_to '<i class="fa fa-facebook"></i> Facebook'.html_safe, "/auth/facebook", class: 'btn btn-hidden'%>
+        <%= link_to '<i class="fa fa-google-plus"></i> Google'.html_safe, "/auth/google", class: 'btn btn-hidden'%>
 <% end %>
 </ul>
 </div>
+
+
+    <% if flash[:error] %>
+      <% flash[:error].each do |message| %>
+        <div class="alert alert-danger" role="alert"><%= message %></div>
+      <% end %>
+    <% end %>
+
+    <% if flash[:notice] %>
+      <div class="alert alert-info" role="alert"><%= flash[:notice] %></div>
+    <% end %>
