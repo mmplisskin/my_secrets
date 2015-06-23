@@ -3,6 +3,6 @@ class OusersController < ApplicationController
  	@ouser = current_ouser
 	@ouser.last_update = Time.now
 	@ouser.save
-	redirect_to root_path
+	redirect_to posts_path
   end
 end

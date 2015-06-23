@@ -1,4 +1,4 @@
-namespace :db do
+namespace :alive do
   desc "Checks db for inactive users"
 
   task :alive => :environment do

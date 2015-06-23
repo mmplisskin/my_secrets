@@ -8,20 +8,21 @@
 
  	<%= f.text_area :description %>
 
+	<% emails = []	%>
+
+<% @post.recipients.each do |recipient| %>
+
+<% emails << recipient.email %>
 
 
-	<%= f.fields_for :recipients do |recipient| %>
-
-	<%= recipient.text_field :email, 'data-role'=> 'tagsinput' %>
 
 	<% end %>
-	<%#= f.collection_check_boxes :recipient_ids, Recipient.all, :id, :name %>
 
-	<%#= f.text_field :description, 'data-role'=>'tagsinput' %>
-
+ 	<%= f.text_field :emails, value: emails.join(','), 'data-role' => 'tagsinput'  %>
 		<center>
 	  		<%= f.submit %>
 		</center>
+
 
 
 

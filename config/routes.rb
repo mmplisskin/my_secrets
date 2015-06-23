@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   #route for oauth
   get '/auth/:provider/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  
+
   post 'i_am_ok'=> 'ousers#imalive'
 
   resources :posts
@@ -32,7 +32,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'posts#index'
+  root 'sessions#new'
+
 
   # get "posts/ok" => "posts#ok", as: :ok
   # Example of regular route:

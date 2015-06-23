@@ -41,4 +41,17 @@ function initialize() {
   getLocation()
 
 }
+
+
+
+function get(){
+
+    $( '#okbtn' ).click(function() {
+      initialize
+    });
+}
+
+
+$(document).on("ready page:load", get);
+
 // $(document).on("ready page:load", initialize);
