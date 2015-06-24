@@ -37,7 +37,7 @@ function initialize() {
 
     type: "PUT",
     url: "ousers/"+id,
-    data: { ouser: { latitude: lat, longitude: long }},
+    data: { ouser: { latitude: lat, longitude: long}},
     dataType: 'json',
   })
 
@@ -50,11 +50,8 @@ function initialize() {
 $(document).on("ready page:load", function(){
       $( '#okbtn' ).click(function() {
         console.log('get running')
-        initialize()
+        $( '#okbtn.i' ).addClass("fa-spin")
+        initialize();
 
       });
   })
-
-
-
-// $(document).on("ready page:load", initialize);

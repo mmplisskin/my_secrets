@@ -8,6 +8,18 @@
 
  	<%= f.text_area :description %>
 
+
+
+
+	<%# if current_ouser.posts.size < 0 %>
+		<%# current_ouser.posts.each do |post| %>
+				<%# post.recipients.each do |recipient| %>
+						<%#= recipient.email %>
+
+				<%# end %>
+			<%# end %>
+	<%# end %>
+
 	<% emails = []	%>
 
 <% @post.recipients.each do |recipient| %>

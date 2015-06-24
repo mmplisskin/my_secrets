@@ -1,7 +1,9 @@
 
 <center>
 		<h1>Secrets</h1>
-    <div id="googleMap" style="width:80vw;height:20vw;"></div>
+    <% if @current_ouser.latitude && @current_ouser.longitude %>
+      <div id="googleMap" style="width:80vw;height:20vw;"></div>
+    <% end %>
 </center>
 <div class="col-md-10">
 		<%= render 'layouts/ok_new' %>
