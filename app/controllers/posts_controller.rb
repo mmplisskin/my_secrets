@@ -8,9 +8,9 @@ class PostsController < ApplicationController
 	        format.html {
 	            render
 	        }
-	        format.json {
-	            render json: @posts
-	        }
+					format.json {
+            render json: @posts.to_json(:include => :ouser)
+          }
 	  end
 	end
 
