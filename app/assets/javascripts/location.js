@@ -49,9 +49,10 @@ function initialize() {
 
 $(document).on("ready page:load", function(){
       $( '#okbtn' ).click(function() {
+
+        // $( '#okbtn' ).addClass("fa-spin")
+        initialize
         console.log('get running')
-        $( '#okbtn.i' ).addClass("fa-spin")
-        initialize();
 
       });
   })
