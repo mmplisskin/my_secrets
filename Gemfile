@@ -57,10 +57,10 @@ gem 'omniauth-google-oauth2'
 
 gem 'geocoder'
 
+ruby '2.2.1'
 
 group :production do
-
-    gem 'rails_12factor'
+  gem 'rails_12factor'
 end
 
 
