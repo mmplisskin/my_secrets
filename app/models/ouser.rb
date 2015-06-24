@@ -2,6 +2,8 @@ class Ouser < ActiveRecord::Base
 	has_many :posts
 	has_many :recipients
 
+	attr_accessor :latitude, :longitude,
+
 	class << self
 	  def from_omniauth(auth_hash)
 	    ouser = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])

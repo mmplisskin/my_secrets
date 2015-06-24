@@ -1,12 +1,13 @@
 function initialize() {
   console.log("init")
+
     var x = document.getElementById("location")
 
   function getLocation() {
-
+      console.log("location running")
 
       if (navigator.geolocation) {
-
+            console.log("in if nav")
           navigator.geolocation.getCurrentPosition(showPosition);
               // console.log(navigator.geolocation.getCurrentPosition)
       } else {
@@ -16,24 +17,28 @@ function initialize() {
 
   function showPosition(position) {
       var latlon = position.coords.latitude + "," + position.coords.longitude;
-      // console.log(latlon)
+      console.log(latlon)
 
       document.getElementById("location").innerHTML = latlon
-
-        ajax(position.coords.latitude, position.coords.longitude)
+      var id = $('#hidden')[0].innerHTML
+      console.log(id)
+        ajax(position.coords.latitude, position.coords.longitude, id);
   }
 
 
 
 
-  function ajax(lat,long){
+  function ajax(lat,long,id){
           console.log("yes ajax");
+          // console.log("/ousers/"+id)
+          console.log(lat,long,id)
+
     $.ajax({
 
-
-    type: "POST",
-    url: "/posts",
-    data: { post: { title: lat , description: long } },
+    type: "PUT",
+    url: "ousers/"+id,
+    data: { ouser: { latitude: lat, longitude: long }},
+    dataType: 'json',
   })
 
 }
@@ -42,17 +47,14 @@ function initialize() {
 
 }
 
+$(document).on("ready page:load", function(){
+      $( '#okbtn' ).click(function() {
+        console.log('get running')
+        initialize()
+
+      });
+  })
 
 
-function get(){
-
-    $( '#okbtn' ).click(function() {
-      initialize
-      console.log('get running')
-    });
-}
-
-
-$(document).on("ready page:load", get);
 
 // $(document).on("ready page:load", initialize);
