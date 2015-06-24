@@ -6,8 +6,9 @@
 
 
 <% if current_ouser %>
+<%= current_ouser.email %>
         <ul class="nav navbar-nav pull-right">
-          <%= image_tag current_ouser.image_url, alt: current_ouser.name %>
+          <%#= image_tag current_ouser.image_url, alt: current_ouser.name %>
           <%= link_to '<i class="fa fa-sign-out"></i> Log Out'.html_safe, logout_path, method: :delete, class: 'btn btn-hidden'%>
         </ul>
 
