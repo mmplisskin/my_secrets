@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	require 'pry'
+	# require 'pry'
 
 	def index
 		@posts = Post.where(ouser_id: current_ouser.id)

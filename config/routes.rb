@@ -21,9 +21,12 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  post 'i_am_ok'=> 'ousers#imalive'
+  post 'i_am_ok' => 'ousers#imalive'
 
   resources :posts
+
+  resources :ousers
+
   # get "secrets" => "posts#index"
   # get "secrets/new" => "secrets#new"
 
