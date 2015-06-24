@@ -5,10 +5,11 @@ class SessionsController < ApplicationController
     def create
 	    @ouser = Ouser.from_omniauth(request.env['omniauth.auth'])
 	    session[:ouser_id] = @ouser.id
-	    @ouser.last_update = Time.now
  			@ouser.save
 	    flash.now[:success] = "Welcome, #{@ouser.name}!"
-			UserMailer.welcome_email(@ouser).deliver
+			if @ouser.created_at > 1.minute.ago
+				UserMailer.welcome_email(@ouser).deliver
+			end
 	 		redirect_to posts_path
 	end
 
