@@ -1,8 +1,8 @@
 
-google.maps.event.addDomListener(window, 'load', initialize);
+// google.maps.event.addDomListener(window, 'load', initialize);
 // google.maps.event.addDomListener(window, 'page:load', initialize);
 
-function initialize() {
+function initializeMAP() {
 
   var url = window.location.origin + window.location.pathname + ".json";
 
@@ -41,8 +41,9 @@ function initialize() {
       google.maps.event.addListener(marker,'click', function() {
         map.setZoom(16);
         map.setCenter(marker.getPosition());
+
       });
   }
 }
 );}
-// google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, 'load', initializeMAP);

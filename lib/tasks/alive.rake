@@ -30,5 +30,5 @@ namespace :alive do
 
       end
   end
-  puts "$%$%$%$%$%$% ALL USERS HAVE BEEN ACCOUNTED FOR $%$%$%$%$%$%"
+  # puts "$%$%$%$%$%$% ALL USERS HAVE BEEN ACCOUNTED FOR $%$%$%$%$%$%"
 end
