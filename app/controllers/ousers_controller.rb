@@ -49,7 +49,7 @@ protect_from_forgery with: :null_session
     # @ouser.update_attributes(ouser_params)
     # @ouser.last_update = Time.now
   if @ouser.update_attributes(ouser_params)
-      @ouser.save
+
       respond_to do |format|
 
       format.json {

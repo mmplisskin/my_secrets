@@ -1,8 +1,8 @@
 class Ouser < ActiveRecord::Base
 	has_many :posts
 	has_many :recipients
-
-	attr_accessor :latitude, :longitude,
+	# 
+	# attr_accessor :latitude, :longitude,
 
 	class << self
 	  def from_omniauth(auth_hash)
