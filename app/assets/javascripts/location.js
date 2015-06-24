@@ -19,7 +19,7 @@ function initialize() {
       var latlon = position.coords.latitude + "," + position.coords.longitude;
       console.log(latlon)
 
-      document.getElementById("location").innerHTML = latlon
+      // document.getElementById("location").innerHTML = latlon
       var id = $('#hidden')[0].innerHTML
       console.log(id)
         ajax(position.coords.latitude, position.coords.longitude, id);
@@ -50,7 +50,7 @@ function initialize() {
 $(document).on("ready page:load", function(){
       $( '#okbtn' ).click(function() {
 
-        $( '#okbtn' ).addClass("fa-spin")
+        $( '#okbtn.fa-refresh' ).addClass("fa-spin")
         initialize()
         console.log('get running')
 
