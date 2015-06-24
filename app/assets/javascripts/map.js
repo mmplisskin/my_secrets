@@ -1,6 +1,6 @@
 
 google.maps.event.addDomListener(window, 'load', initialize);
-google.maps.event.addDomListener(window, 'page:load', initialize);
+// google.maps.event.addDomListener(window, 'page:load', initialize);
 
 function initialize() {
 
@@ -9,17 +9,15 @@ function initialize() {
   $.get(url, function(results){
     // console.log(results)
     if (results[0] == undefined ){
-      return
+
 
     }
     else{
 
-      var post = results[0]["ouser"]
+      var lat = results[0]["ouser"]["latitude"];
+      var long = results[0]["ouser"]["longitude"];
       // console.log(post)
 
-
-      var lat = post["latitude"];
-      var long = post["longitude"];
       console.log(lat,long)
 
       var myCenter = new google.maps.LatLng(lat,long);
@@ -47,4 +45,4 @@ function initialize() {
   }
 }
 );}
-google.maps.event.addDomListener(window, 'load', initialize);
+// google.maps.event.addDomListener(window, 'load', initialize);

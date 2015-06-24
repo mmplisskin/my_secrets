@@ -1,10 +1,15 @@
 
-<center>
+
 		<h1>Secrets</h1>
-    <% if @current_ouser.latitude && @current_ouser.longitude %>
-      <div id="googleMap" style="width:80vw;height:20vw;"></div>
+    <% if @current_ouser.latitude && @current_ouser.posts.size > 0 %>
+      	<div id="googleMap" style="width:30vw;height:20vw;"></div>
+
+			Last Update was	<%=  time_ago_in_words@current_ouser.updated_at%>
+			from
+			Lat<%= @current_ouser.latitude.round(3) %>
+			Long<%= @current_ouser.longitude.round(3) %>
     <% end %>
-</center>
+
 <div class="col-md-10">
 		<%= render 'layouts/ok_new' %>
 	<div id="accordion">
