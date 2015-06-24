@@ -3,7 +3,6 @@ class PostsController < ApplicationController
 
 	def index
 		@posts = Post.where(ouser_id: current_ouser.id)
-		@posts = Post.all
 			respond_to do |format|
 	        format.html {
 	            render
