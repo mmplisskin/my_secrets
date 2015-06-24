@@ -4,10 +4,13 @@
   <%= link_to'<i class="fa fa-plus-square"> New Secret</i>'.html_safe, new_post_path, class:'btn btn-large btn-primary'  %>
   </a>
   <% if current_ouser.posts.size > 0 %>
-  <a class = "btn btn-large btn-primary">
-    <i class ="fa fa-refresh", id ="okbtn" > "I Am Ok" </i>
+  <a class = "btn btn-large btn-primary" id ="okbtn" >
+    <i class ="fa fa-refresh" id:'spinner' ></i> I'm Ok
   </a>
   <% end %>
-  	<!-- <p id="location"></p> -->
+  	<p id="location"></p>
 </h2>
 <!-- data: {confirm: "Good To hear from you!"},  -->
+
+
+div.container div.col-md-10 h2 a.btn.btn-large.btn-primary.mouse_active
