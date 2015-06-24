@@ -7,3 +7,4 @@ language: ruby
 	  postgresql: "9.3"
 	before_script:
 	  - psql -c 'create database my_secrets;' -U postgres
+
