@@ -14,12 +14,13 @@
 //= require bootstrap-tagsinput
 //= require jquery_ujs
 //= require jquery.readyselector.js
+//= require location
 //= require map.js
 
 
 //= require bootstrap-sprockets
 //= require semantic-ui
-//= require location
+
 
 
 

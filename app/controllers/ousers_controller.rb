@@ -1,12 +1,7 @@
 class OusersController < ApplicationController
 
 protect_from_forgery with: :null_session
-  # def imalive
-  #  	@ouser = current_ouser
-  # 	@ouser.last_update = Time.now
-  # 	@ouser.save
-  # 	redirect_to posts_path
-  # end
+
 
   def new
     @ouser = Ouser.new(ouser_params)
@@ -39,6 +34,7 @@ protect_from_forgery with: :null_session
     }
     format.json {
         render json: @ouser
+        redirect_to(:controller => 'posts', :action => 'index')
     }
     end
   end
@@ -51,11 +47,16 @@ protect_from_forgery with: :null_session
   if @ouser.update_attributes(ouser_params)
 
       respond_to do |format|
+        format.html {
+          render
+
+        }
 
       format.json {
           render json: @ouser
       }
       end
+
 
     end
   end

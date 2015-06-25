@@ -42,13 +42,17 @@ function initialize() {
     data: { ouser: { latitude: lat, longitude: long}},
     dataType: 'json',
   })
+
   $( '#spinner' ).removeClass("fa-spin")
   $( '#spinner' ).removeClass("fa fa-refresh")
   $( '#spinner' ).addClass('fa fa-check')
   $( '#okbtn' ).addClass('btn-success')
+  $( '.maptrigger' ).addClass('mapget')
+
 }
 
   getLocation()
+$( '.maptrigger' ).removeClass('mapget')
 
 }
 
