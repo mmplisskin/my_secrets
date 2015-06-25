@@ -36,7 +36,7 @@ gem 'bootstrap_form'
 gem 'font-awesome-sass'
 
 # gem 'nested_form'
-
+gem "rails-bootstrap-helpers"
 # gem 'jquery-ui-rails'
 
 gem 'semantic-ui-rails'
@@ -55,7 +55,7 @@ gem 'omniauth-facebook'
 #allows auth via google
 gem 'omniauth-google-oauth2'
 
-gem 'geocoder'
+gem "rails-bootstrap-helpers"
 
 
 group :production do
