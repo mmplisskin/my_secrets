@@ -31,9 +31,11 @@
     width: 100vw;
     height: 1000vw;
     background-image: url('secrets.png');
-    background-repeat: repeat-x;
+    background-repeat: no-repeat;
+    background-position: center;
     background-attachment: fixed;
-
+    opacity: .6;
+    // z-index: 1;
 }
 
 
