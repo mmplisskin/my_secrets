@@ -1,21 +1,21 @@
 <div class="ui inverted menu">
 
-  <%= link_to '<i class="fa fa-diamond"></i> Login'.html_safe, login_path, class: 'btn btn-hidden'%>
+  <%#= link_to '<i class="fa fa-diamond"></i> Login'.html_safe, login_path, class: 'btn btn-hidden'%>
   <%= link_to '<i class="fa fa-lock"></i> Secrets'.html_safe, posts_path, class: 'btn btn-hidden'%>
   <%= link_to '<i class="fa fa-user-secret"></i> Account'.html_safe, posts_path, class: 'btn btn-hidden'%>
 
 
 <% if current_ouser %>
-<%= current_ouser.email %>
         <ul class="nav navbar-nav pull-right">
           <%#= image_tag current_ouser.image_url, alt: current_ouser.name %>
+
           <%= link_to '<i class="fa fa-sign-out"></i> Log Out'.html_safe, logout_path, method: :delete, class: 'btn btn-hidden'%>
         </ul>
 
       <% else %>
         <ul class="nav navbar-nav pull-right">
-        <%= link_to '<i class="fa fa-facebook"></i> Facebook'.html_safe, "/auth/facebook", class: 'btn btn-hidden'%>
-        <%= link_to '<i class="fa fa-google-plus"></i> Google'.html_safe, "/auth/google", class: 'btn btn-hidden'%>
+        <%#= link_to '<i class="fa fa-facebook"></i> Facebook'.html_safe, "/auth/facebook", class: 'btn btn-hidden'%>
+        <%#= link_to '<i class="fa fa-google-plus"></i> Google'.html_safe, "/auth/google", class: 'btn btn-hidden'%>
 <% end %>
 </ul>
 </div>

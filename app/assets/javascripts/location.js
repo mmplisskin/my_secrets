@@ -46,8 +46,9 @@ function initialize() {
   $( '#spinner' ).removeClass("fa-spin")
   $( '#spinner' ).removeClass("fa fa-refresh")
   $( '#spinner' ).addClass('fa fa-check')
-  $( '#okbtn' ).addClass('btn-success')
+  $( '#okbtn' ).addClass('ui green button')
   $( '.maptrigger' ).addClass('mapget')
+  $('.last_update').html("you are up to date!")
 
 }
 

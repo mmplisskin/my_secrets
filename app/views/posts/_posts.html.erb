@@ -1,13 +1,13 @@
 
 
 		<h1>Secrets</h1>
-    <% if @current_ouser.latitude && @current_ouser.posts.size > 0 %>
+    <% if @current_ouser.posts.size > 0 %>
       	<div id="googleMap" style="width:80vw;height:20vw;"></div>
 
-			Last Update was	<%=  time_ago_in_words@current_ouser.updated_at%>
-			<!-- from
-			latitude <%#= @current_ouser.latitude.round(3) %>
-			longitude <%#= @current_ouser.longitude.round(3) %> -->
+		<div class = "last_update">Last Update was <%=  time_ago_in_words@current_ouser.updated_at%> ago </div>
+		From:
+			latitude <%= @current_ouser.latitude.round(3) %>
+			longitude <%= @current_ouser.longitude.round(3) %>
   <% end %>
 
 		<%= render 'layouts/ok_new' %>
