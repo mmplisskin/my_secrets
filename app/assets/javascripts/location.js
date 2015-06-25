@@ -40,7 +40,6 @@ function initialize() {
     data: { ouser: { latitude: lat, longitude: long}},
     dataType: 'json',
   })
-
 }
 
   getLocation()

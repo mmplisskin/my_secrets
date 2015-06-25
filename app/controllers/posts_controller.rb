@@ -16,6 +16,14 @@ class PostsController < ApplicationController
 	def new
     	@post = Post.new
 			@post.recipients.build
+			respond_to do |format|
+					format.html {
+							render
+					}
+					format.json {
+							render json: @posts
+					}
+			end
   end
 
 	def show

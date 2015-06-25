@@ -13,28 +13,14 @@
 //= require jquery
 //= require bootstrap-tagsinput
 //= require jquery_ujs
+//= require jquery.readyselector.js
+//= require map.js
 
 
 //= require bootstrap-sprockets
 //= require semantic-ui
-//= require_tree .
-
-// console.log("//= require jquery.turbolinks")
+//= require location
 
 
 
-// google.maps.event.addDomListener(window, 'load', getLocation);
-//
-// var x = document.getElementById("location");
-//
-// function getLocation() {
-//     if (navigator.geolocation) {
-//         navigator.geolocation.watchPosition(showPosition);
-//     } else {
-//         x.innerHTML = "Geolocation is not supported by this browser.";}
-//     }
-//
-// function showPosition(position) {
-//     x.innerHTML="Latitude: " + position.coords.latitude +
-//     "<br>Longitude: " + position.coords.longitude;
-// }
+// console.log("//= require jquery.turbolinks  //= require_tree .")
