@@ -22,6 +22,8 @@ function initialize() {
       // document.getElementById("location").innerHTML = latlon
       var id = $('#hidden')[0].innerHTML
       console.log(id)
+
+
         ajax(position.coords.latitude, position.coords.longitude, id);
   }
 
@@ -40,6 +42,10 @@ function initialize() {
     data: { ouser: { latitude: lat, longitude: long}},
     dataType: 'json',
   })
+  $( '#spinner' ).removeClass("fa-spin")
+  $( '#spinner' ).removeClass("fa fa-refresh")
+  $( '#spinner' ).addClass('fa fa-check')
+  $( '#okbtn' ).addClass('btn-success')
 }
 
   getLocation()
@@ -47,9 +53,12 @@ function initialize() {
 }
 
 $(document).on("ready page:load", function(){
+      $( '#spinner' ).addClass("fa fa-refresh")
+
       $( '#okbtn' ).click(function() {
 
-        $( '#okbtn.fa-refresh' ).addClass("fa-spin")
+        $( '#spinner' ).addClass("fa-spin")
+
         initialize()
         console.log('get running')
 
