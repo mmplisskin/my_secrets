@@ -42,7 +42,7 @@ $('.posts.index').ready(function () {
           zoom:12,
           zoomControl:false,
           panControl:false,
-          mapTypeId:google.maps.MapTypeId.HYBRID
+          mapTypeId:google.maps.MapTypeId.ROADMAP
         };
 
         var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);

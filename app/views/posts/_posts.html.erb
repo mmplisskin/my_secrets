@@ -2,34 +2,43 @@
 
 		<h1>Secrets</h1>
     <% if @current_ouser.latitude && @current_ouser.posts.size > 0 %>
-      	<div id="googleMap" style="width:30vw;height:20vw;"></div>
+      	<div id="googleMap" style="width:80vw;height:20vw;"></div>
 
 			Last Update was	<%=  time_ago_in_words@current_ouser.updated_at%>
-			from
-			Lat<%= @current_ouser.latitude.round(3) %>
-			Long<%= @current_ouser.longitude.round(3) %>
-    <% end %>
+			<!-- from
+			latitude <%#= @current_ouser.latitude.round(3) %>
+			longitude <%#= @current_ouser.longitude.round(3) %> -->
+  <% end %>
 
-<div class="col-md-10">
 		<%= render 'layouts/ok_new' %>
-	<div id="accordion">
-		<% @posts.each do |post| %>
-			<h3><%= post.title %> </h3>
-				<div>
-					<br>
-						<p>	<%= post.description %></p>
-							<% post.recipients.each do |r| %>
-						<p><%= r.email %></p>
-								<% end %>
-						<p>	<%= link_to "Edit this", edit_post_path(post.id)%> </p>
-						<%= link_to 'delete', post, :method => :delete, :confirm => "You sure?",
-                                :title => "Delete #{post.id}" %>
-						<i class="fa fa-trash-o"></i>
+
+		<%= accordion "unique_id" do |a| %>
+			<% @posts.each do |post| %>
+		  	<h3><% a.group post.title do %><h3>
+				<p><%= post.description %></p>
+				<h4><% post.recipients.each do |r| %>
+							<%= r.email %>
+						<% end %>
+				</h4>
+
+				<p>	<%= link_to "Edit this", edit_post_path(post.id)%>
 
 
-					<br>
-				</div>
 
-		<%end%>
- 	</div>
-</div>
+						<div class="ui secondary button">
+							<%= link_to 'delete', post, :method => :delete, :confirm => "You sure?",
+															:title => "Delete #{post.id}" %>
+								<i class="fa fa-trash-o"></i>
+						</div>
+				</p>
+		  <% end %>
+		<% end %>
+		<% end %>
+
+
+
+
+<!--
+<div class="col-md-12">
+
+</div> -->
