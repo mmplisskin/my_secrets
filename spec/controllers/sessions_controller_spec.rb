@@ -18,6 +18,7 @@ require 'spec_helper'
 	       		post :create, provider: :facebook
 	       		expect(session[:ouser_id]).not_to be_nil
 	     	end
+	     	
 
 	   		describe "#destroy" do
 	     		before do
@@ -34,6 +35,7 @@ require 'spec_helper'
 	       		delete :destroy
 	       		response.should redirect_to login_path
 	     	end
+
 	   	end
 	end
 end
