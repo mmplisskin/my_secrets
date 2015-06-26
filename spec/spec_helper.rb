@@ -16,6 +16,35 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+ENV["RAILS_ENV"] ||= 'test'
+require File.expand_path("../../config/environment", __FILE__)
+require 'rspec/rails'
+OmniAuth.config.test_mode = true
+omniauth_hash = { 'provider' => 'facebook',
+                  'uid' => '10103246354915555',
+                  'info' => {
+                      'name' => 'Bush Anwar',
+                      'email' => 'busyra.anwar@me.com',
+                      'location' => '',
+                      'image_url' => 'http://graph.facebook.com/10103246354915554/'
+
+                    }
+}
+ 
+      # ouser = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])
+      # ouser.name = auth_hash['info']['name']
+      # ouser.location = auth_hash['info']['location']
+      # ouser.image_url = auth_hash['info']['image']
+      # ouser.url = auth_hash['info']['urls'][ouser.provider.capitalize]
+      # ouser.email= auth_hash['info']['email']
+      # ouser.save!
+      # ouser
+
+
+OmniAuth.config.add_mock(:facebook, omniauth_hash)
+
+
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

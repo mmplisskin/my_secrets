@@ -15,3 +15,7 @@
 
 # Ignore application configuration
 /config/application.yml
+
+#ignore redis bs
+
+dump.rdb
