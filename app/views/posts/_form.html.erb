@@ -4,9 +4,9 @@
 
 <%= bootstrap_form_for @post  do |f| %>
 
-	<%= f.text_field :title %>
+	<%= f.text_field :title, label: "The Secret" %>
 
- 	<%= f.text_area :description %>
+ 	<%= f.text_area :description, label: "Secret Details"%>
 
 
 
@@ -30,9 +30,9 @@
 
 	<% end %>
 
- 	<%= f.text_field :emails, value: emails.join(','), 'data-role' => 'tagsinput'  %>
+ 	<%= f.text_field :emails, value: emails.join(','), 'data-role' => 'tagsinput', label: "Recipient Emails" %>
 		<center>
-	  		<%= f.submit %>
+	  		<%=  f.primary "Save Secret" %>
 		</center>
 
 

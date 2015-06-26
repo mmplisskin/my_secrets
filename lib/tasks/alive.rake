@@ -1,7 +1,7 @@
-namespace :alive do
+namespace :user do
   desc "Checks db for inactive users"
 
-  task :check => :environment do
+  task :alive => :environment do
 
     puts "*****==== checking for inactive users =====*****"
       #do not touch this line or add space it wont work if u add space

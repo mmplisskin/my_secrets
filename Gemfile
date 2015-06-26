@@ -39,6 +39,8 @@ gem 'bootstrap_form'
 
 gem 'font-awesome-sass'
 
+gem 'clockwork'
+
 # gem 'nested_form'
 # gem "rails-bootstrap-helpers"
 # gem 'jquery-ui-rails'
