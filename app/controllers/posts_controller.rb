@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	# require 'pry'
-
+	before_action :authorized?
 	def index
 		@posts = Post.where(ouser_id: current_ouser.id)
 			respond_to do |format|
