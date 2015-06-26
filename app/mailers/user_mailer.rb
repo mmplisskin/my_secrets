@@ -1,4 +1,5 @@
 class UserMailer < ApplicationMailer
+      # include Sidekiq::Worker
 
   def secrets_email(title,description,inac_name,recipient)
 
@@ -13,19 +14,19 @@ class UserMailer < ApplicationMailer
 
     end
 
-  def welcome_email(ouser)
+  def welcome_email(ouser_id)
+      @ouser = Ouser.find(ouser_id)
+      @email = @ouser.email
+      @title = "Great to have you #{@ouser.name}"
+      @subject = "Welcome! #{@ouser.name}"
+      @greeting = "Congrats  #{@ouser.name}. You have made a brilliant decision to keep your digital legacy safe! "
+    # else
+      # @title = "Cheers #{ouser.name}"
+      # @subject = "Good to know that everything is still awesome #{ouser.name}!"
+      # @greeting = "Welcome back #{ouser.name}. Your secrets are still safe!"
+    # end
 
-    if ouser.created_at > 1.minutes.ago
-        @title = "Great to have you #{ouser.name}"
-        @subject = "Welcome! #{ouser.name}"
-        @greeting = "Congrats  #{ouser.name}. You have made a brilliant decision to keep your digital legacy safe! "
-    else
-      @title = "Cheers #{ouser.name}"
-      @subject = "Good to know that everything is still awesome #{ouser.name}!"
-      @greeting = "Welcome back #{ouser.name}. Your secrets are still safe!"
-    end
-
-    mail to: ouser.email, subject: @subject
+    mail to: @email, subject: @subject
   end
 
 
