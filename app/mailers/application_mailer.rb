@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "mastertracksla@gmail.com"
+  default from: "mysecretsnotify@gmail.com"
   layout 'mailer'
 end

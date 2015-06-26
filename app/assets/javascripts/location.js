@@ -49,6 +49,7 @@ function initialize() {
   $( '#okbtn' ).addClass('ui green button')
   $( '.maptrigger' ).addClass('mapget')
   $('.last_update').html("you are up to date!")
+  // $( '#okbtn i' ).html(' Your ok!')
 
 }
 
@@ -58,10 +59,11 @@ $( '.maptrigger' ).removeClass('mapget')
 }
 
 $(document).on("ready page:load", function(){
+
       $( '#spinner' ).addClass("fa fa-refresh")
-
+      $( '#okbtn i' ).html(' Check In')
       $( '#okbtn' ).click(function() {
-
+      $( '#okbtn i' ).html('')
         $( '#spinner' ).addClass("fa-spin")
 
         initialize()

@@ -1,16 +1,20 @@
 class PostsController < ApplicationController
-	# require 'pry'
+		# before_action :require_ouser
 
 	def index
-		@posts = Post.where(ouser_id: current_ouser.id)
-			respond_to do |format|
-	        format.html {
-	            render
-	        }
-					format.json {
-            render json: @posts.to_json(:include => :ouser)
-          }
-	  end
+		# if @current_ouser
+			@posts = Post.where(ouser_id: current_ouser.id)
+				respond_to do |format|
+		        format.html {
+		            render
+		        }
+						format.json {
+	            render json: @posts.to_json(:include => :ouser)
+	          }
+				end
+		# 	else
+		# 		redirect_to login_path
+	  # end
 	end
 
 	def new
