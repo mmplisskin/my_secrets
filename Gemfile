@@ -28,6 +28,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'sidekiq'
+gem 'sinatra', :require => nil
+
+gem 'unicorn'
 
 gem 'bootstrap-sass', '~> 3.3.4.1'
 
@@ -36,7 +40,7 @@ gem 'bootstrap_form'
 gem 'font-awesome-sass'
 
 # gem 'nested_form'
-gem "rails-bootstrap-helpers"
+# gem "rails-bootstrap-helpers"
 # gem 'jquery-ui-rails'
 
 gem 'semantic-ui-rails'
@@ -73,7 +77,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # gem 'spring'
   gem 'rspec-rails'
 
 end

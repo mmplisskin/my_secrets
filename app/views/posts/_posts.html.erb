@@ -2,15 +2,16 @@
 
 		<h1>Secrets</h1>
 <% if @current_ouser.posts.size > 0  %>
+<% if @current_ouser.latitude && @current_ouser.longitude %>
+
     <div id="googleMap" style="width:80vw;height:20vw;"></div>
 		<div class = "last_update">Last Update was <%=  time_ago_in_words@current_ouser.updated_at%> ago </div>
-<% end %>
-
- <% if @current_ouser.latitude && @current_ouser.longitude %>
 		From:
 			latitude <%= @current_ouser.latitude.round(3) %>
 			longitude <%= @current_ouser.longitude.round(3) %>
-  <% end %>
+	<% end %>
+<% end %>
+
 
 		<%= render 'layouts/ok_new' %>
 		<div class="ui styled accordion">
