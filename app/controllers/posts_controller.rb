@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-		# before_action :require_ouser
+
+	before_action :authorized?
 
 	def index
 		# if @current_ouser
