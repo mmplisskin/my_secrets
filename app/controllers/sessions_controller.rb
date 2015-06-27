@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-	include Sidekiq::Worker
-	after_commit :sendit, :on => :create
+	# include Sidekiq::Worker
+	# after_commit :sendit, :on => :create
 
 	def new
 	end
@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
 			 UserMailer.delay.welcome_email(@ouser.id)
 			# if @ouser.created_at > 1.minute.ago
 
+
 		end
 	 		redirect_to posts_path
 	end
@@ -22,7 +23,7 @@ class SessionsController < ApplicationController
 		redirect_to login_path
 	end
 
-	def sendit
-		UserMailer.delay.welcome_email(self.id)
-	end
+	# def sendit
+	# 	UserMailer.delay.welcome_email(self.id)
+	# end
 end
