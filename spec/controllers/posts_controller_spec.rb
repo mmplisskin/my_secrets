@@ -21,11 +21,11 @@ RSpec.describe PostsController, :type => :controller do
     end
   end
 
-      it "assigns a newly created post as @post" do
-        post :create, {:post => valid_attributes}
-        expect(assigns(:post)).to be_a(post)
-        expect(assigns(:post)).to be_persisted
-      end
+      # it "assigns a newly created post as @post" do
+      #   post :create, {:post => valid_attributes}
+      #   expect(assigns(:post)).to be_a(post)
+      #   expect(assigns(:post)).to be_persisted
+      # end
 
       # it "redirects to the created post" do
       #   post :create, {:post => valid_attributes}
