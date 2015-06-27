@@ -5,11 +5,12 @@ class SessionsController < ApplicationController
     def create
 	    @ouser = Ouser.from_omniauth(request.env['omniauth.auth'])
 	    session[:ouser_id] = @ouser.id
-			UserMailer.delay.welcome_email(@ouser.id)
+
  		if @ouser.save
+			 UserMailer.delay.welcome_email(@ouser.id)
 			# if @ouser.created_at > 1.minute.ago
 
-			end
+		end
 	 		redirect_to posts_path
 	end
 
