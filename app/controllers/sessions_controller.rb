@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+	include Sidekiq::Worker
+	after_commit :sendit, :on => :create
+
 	def new
 	end
 
@@ -17,5 +20,9 @@ class SessionsController < ApplicationController
 	def destroy
 		session.delete(:ouser_id)
 		redirect_to login_path
+	end
+
+	def sendit
+		UserMailer.delay.welcome_email(self.id)
 	end
 end
