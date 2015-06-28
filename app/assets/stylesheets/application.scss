@@ -80,7 +80,7 @@ body {
 }
 
 .secrets_img{
-  background-image: url("http://i.imgur.com/KAYrgH4.png");
+  background-image: url("http://i.imgur.com/i0yw66f.png");
   background-repeat: no-repeat;
   background-position: center;
 
@@ -89,6 +89,8 @@ body {
   // z-index: 10;
   width: 55vw;
   height: 100vh;
+  left: -5vw;
+  top:-3;
   opacity: .6;
   position: absolute;
 
@@ -171,7 +173,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ababab', end
   height: 82.5vh;
   opacity: .8;
   position: absolute;
-  top: 2vh;
+  top: 5vh;
   left: 47vw;
 
   -moz-box-shadow:    inset 0 0 10px #000000;
