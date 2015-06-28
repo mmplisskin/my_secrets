@@ -1,14 +1,14 @@
 <div class="ui inverted menu">
 
-  <%#= link_to '<i class="fa fa-diamond"></i> Login'.html_safe, login_path, class: 'btn btn-hidden'%>
+  <%= link_to ''.html_safe, login_path, class: 'btn btn-hidden'%>
   <%= link_to '<i class="fa fa-lock"></i> Secrets'.html_safe, posts_path, class: 'btn btn-hidden'%>
-  <%= link_to '<i class="fa fa-user-secret"></i> Account'.html_safe, posts_path, class: 'btn btn-hidden'%>
+  <%#= link_to '<i class="fa fa-user-secret"></i> Account'.html_safe, posts_path, class: 'btn btn-hidden'%>
 
 
 <% if current_ouser %>
         <ul class="nav navbar-nav pull-right">
           <%#= image_tag current_ouser.image_url, alt: current_ouser.name %>
-
+          <%#= current_ouser.name%>
           <%= link_to '<i class="fa fa-sign-out"></i> Log Out'.html_safe, logout_path, method: :delete, class: 'btn btn-hidden'%>
         </ul>
 
