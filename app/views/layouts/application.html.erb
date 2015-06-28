@@ -3,6 +3,7 @@
 <head>
   <title>MySecrets</title>
   <script src="//maps.googleapis.com/maps/api/js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
@@ -12,12 +13,13 @@
 
 </head>
 
+
   <%= render 'layouts/nav' %>
 
 
 
   <body class="<%= controller_name %> <%= action_name %>">
-      <div class="container">
+      <div class="container-fluid">
       <%= yield %>
 
         </div>

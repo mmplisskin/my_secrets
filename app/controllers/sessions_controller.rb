@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-	include Sidekiq::Worker
-	after_commit :sendit, :on => :create
+	# include Sidekiq::Worker
+	# after_commit :sendit, :on => :create
 
 	def new
 	end
