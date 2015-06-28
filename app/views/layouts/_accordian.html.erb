@@ -1,0 +1,23 @@
+<div class="ui styled accordion">
+<%= accordion "unique_id" do |a| %>
+  <% @posts.each do |post| %>
+    <h3><% a.group post.title do%><h3>
+    <div class="content">
+      <p><%= post.description %></p>
+      <h4><% post.recipients.each do |r| %>
+            <%= r.email %>
+          <% end %>
+      </h4>
+      <p>	<%= link_to "Edit this", edit_post_path(post.id)%>
+
+          <div class="ui secondary button">
+            <%= link_to 'delete', post, :method => :delete, :confirm => "You sure?",
+                            :title => "Delete #{post.id}" %>
+              <i class="fa fa-trash-o"></i>
+          </div>
+      </p>
+  </div>
+  <% end %>
+<% end %>
+<% end %>
+</div>

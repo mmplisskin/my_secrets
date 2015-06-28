@@ -1,14 +1,17 @@
+<!-- <div class="new_ok_btn"> -->
+  <!-- <h2> -->
+  <%= link_to'<i class="fa fa-plus"> New Secret</i>'.html_safe, new_post_path, class:'ui black button inverted large'  %>
 
-<h2>
-
-  <%= link_to'<i class="fa fa-plus"> New Secret</i>'.html_safe, new_post_path, class:'ui purple button'  %>
-  </a>
   <% if current_ouser.posts.size > 0 %>
 
-  <a class = "ui blue button" id ="okbtn" >
-    <i class ="" id='spinner' ></i>
-  </a>
+    <a class = "ui blue button large invert" id ="okbtn" >
+      <i class ="" id='spinner' ></i>
+    </a>
+
   <% end %>
-  	<p id="location"></p>
-</h2>
+
+  <p id="location"></p>
+
+  <!-- </h2> -->
+<!-- </div> -->
 <!-- data: {confirm: "Good To hear from you!"},  -->
