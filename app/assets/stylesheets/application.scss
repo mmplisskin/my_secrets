@@ -27,28 +27,31 @@
    *= require rails_bootstrap_forms
    */
 
-#login{
-    width: 100vw;
-    height: 1000vw;
-    background-image: url('secrets.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    // opacity: .6;
-    // z-index: 1;
+// .sessions, .new{
+//     // width: 100vw;
+//     // height: 1000vw;
+//     background-image: url("http://i.imgur.com/KAYrgH4.png");
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     background-attachment: fixed;
+//     // z-index: -1;
+//
+// }
+
+.container{
+  margin: 0 auto;
 }
-
-
 
 textarea {
    resize: none;
 }
 
 body {
-    background-image: url('bg_sliver.png');
-    background-repeat: repeat-x;
-    background-attachment: fixed;
-}
+    // background-image: url('bg_sliver.png');
+    // background-repeat: repeat-x;
+//     background-attachment: relative;
+//     background-position: center;
+ }
 
 .b{
   color:black;
@@ -61,3 +64,97 @@ body {
 #hidden{
   display: none;
 }
+
+#login{
+  position: absolute;
+  top: 48.5vh;
+  left:62vw;
+  // left: 34em;
+}
+
+.secrets_img{
+  background-image: url("http://i.imgur.com/KAYrgH4.png");
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+  // background-attachment: fixed;
+  // z-index: 10;
+  width: 55vw;
+  height: 100vh;
+  opacity: .6;
+  position: absolute;
+
+}
+
+
+
+
+
+.menu{
+  opacity: .8;
+}
+
+.sessions{
+  background: rgba(83,87,127,1);
+  background: -moz-linear-gradient(top, rgba(83,87,127,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.74) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(83,87,127,1)), color-stop(2%, rgba(71,72,108,0.99)), color-stop(57%, rgba(42,41,46,0.85)), color-stop(100%, rgba(42,41,46,0.74)));
+  background: -webkit-linear-gradient(top, rgba(83,87,127,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.74) 100%);
+  background: -o-linear-gradient(top, rgba(83,87,127,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.74) 100%);
+  background: -ms-linear-gradient(top, rgba(83,87,127,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.74) 100%);
+  background: linear-gradient(to bottom, rgba(83,87,127,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.74) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#53577f', endColorstr='#2a292e', GradientType=0 );
+}
+
+.posts{
+  background: rgba(83,87,127,1);
+  background: -moz-linear-gradient(top, rgba(83,87,127,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.74) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(83,87,127,1)), color-stop(2%, rgba(71,72,108,0.99)), color-stop(57%, rgba(42,41,46,0.85)), color-stop(100%, rgba(42,41,46,0.74)));
+  background: -webkit-linear-gradient(top, rgba(83,87,127,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.74) 100%);
+  background: -o-linear-gradient(top, rgba(83,87,127,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.74) 100%);
+  background: -ms-linear-gradient(top, rgba(83,87,127,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.74) 100%);
+  background: linear-gradient(to bottom, rgba(83,87,127,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.74) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#53577f', endColorstr='#2a292e', GradientType=0 );
+}
+
+
+
+// .modal-dialog{
+//   position: absolute;
+//   top: 18vh;
+//   left: 35vw;
+// }
+
+* {
+  border-radius: 0 !important;
+}
+
+.modal-body{
+
+  text-align: center;
+
+}
+
+// .login_center{
+//   position: relative;
+//
+//
+// }
+
+#social{
+  margin-bottom: 1vw;
+
+}
+html{
+  margin: 0 auto;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+// .secrets_img{
+//   background-image: url("http://i.imgur.com/KAYrgH4.png");
+//   position: relative;
+//   // top: 76vh;
+//   // left:47vw;
+//   // width: 40vw;
+//   // height: 40vh;
+// }
