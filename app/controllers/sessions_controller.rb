@@ -10,7 +10,9 @@ class SessionsController < ApplicationController
 	    session[:ouser_id] = @ouser.id
 
  		if @ouser.save
-			 UserMailer.delay.welcome_email(@ouser.id)
+			#  UserMailer.delay.welcome_email(@ouser.id)
+			UserMailer.welcome_email(@ouser.id).deliver
+
 			# if @ouser.created_at > 1.minute.ago
 
 		end
