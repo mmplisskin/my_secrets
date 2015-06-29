@@ -23,25 +23,27 @@
 			</h3>
 			<% end %>
 
+			<div class = "secret_buttons">
+				<%= link_to'<i class="fa fa-plus"> New Secret</i>'.html_safe, new_post_path, class:'ui button inverted large'  %>
 
-			<%= link_to'<i class="fa fa-plus"> New Secret</i>'.html_safe, new_post_path, class:'ui button inverted large'  %>
+				<% if @current_ouser.posts.size > 0  %>
 
-			<% if @current_ouser.posts.size > 0  %>
-
-			<a class = "ui blue button large invert" id ="okbtn" >
-				<i class ="" id='spinner' ></i>
-			</a>
+				<a class = "ui blue button large invert" id ="okbtn" >
+					<i class ="" id='spinner' ></i>
+				</a>
 
 
-		<% end %>
-
+				<% end %>
+			</div>
 
 
 
 		</div>
 	</div>
 	<div class = "secret_posts">
-		<p>FILL WITH ACCORDIAN</p>	
+
+		<p>FILL</p>	
+
 	</div>
 
 
