@@ -69,6 +69,7 @@ body {
 }
 
 #hidden{
+  position: absolute;
   display: none;
 }
 
@@ -246,7 +247,7 @@ h1{
 
 #googleMap{
 
-  width: 20vw;
+  width: 21vw;
   height: 20vh;
 }
 
@@ -281,12 +282,14 @@ h1{
 .secrets_content{
 
   width: 21vw;
-  height: 46vh;
+  height: 54vh;
   opacity: .8;
   position: absolute;
   top: 10vh;
   left: 5.5vw;
   text-align: center;
+  -webkit-box-shadow: -10px 10px 20px 1px #2A2E45;
+  box-shadow: -10px 10px 20px 1px #2A2E45;
 
 }
 
@@ -307,6 +310,8 @@ h1{
   background: -ms-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
   background: linear-gradient(to bottom, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
+  -webkit-box-shadow: 10px 10px 20px 1px #2A2E45;
+  box-shadow: 10px 10px 20px 1px #2A2E45;
 
 }
 
@@ -354,6 +359,7 @@ h1{
 
 }
 
+
 @-webkit-keyframes blink {
   0%   { opacity: .5; }
   50%  { opacity: .9;}
@@ -373,4 +379,12 @@ h1{
   0%   { opacity: .5; }
   50%  { opacity: .9;}
   100% { opacity: .5; }
+}
+
+.last_update{
+  margin-top: 50px;
+}
+
+.secret_buttons{
+  margin-top: 55px;
 }
