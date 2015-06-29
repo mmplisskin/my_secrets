@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
 
 			# if @ouser.created_at > 1.minute.ago
 
+
 		end
 	 		redirect_to posts_path
 	end
