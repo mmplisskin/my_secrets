@@ -84,6 +84,10 @@ body {
   background-image: url("http://i.imgur.com/i0yw66f.png");
   background-repeat: no-repeat;
   background-position: center;
+  -webkit-animation: blink 5s infinite;
+    -moz-animation:    blink 5s infinite;
+    -o-animation:      blink 5s infinite;
+    animation:         blink 5s infinite;
 
 
   // background-attachment: fixed;
@@ -183,9 +187,9 @@ textarea.form-control{
   top: 5vh;
   left: 47vw;
 
-  -moz-box-shadow:    inset 0 0 10px #000000;
-  -webkit-box-shadow: inset 0 0 10px #000000;
-  box-shadow:         inset 0 0 10px #000000;
+  -moz-box-shadow:    inset .1vw .1vw .9vw .1vw #000000;
+  -webkit-box-shadow: inset .1vw .1vw .9vw .1vw #000000;
+  box-shadow:         inset .1vw .1vw .9vw .1vw #000000;
   z-index: -1;
   background: rgba(76,76,76,1);
   background: -moz-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
@@ -201,17 +205,33 @@ textarea.form-control{
 .secrets_text{
   line-height: 200%;
   position: absolute;
-  top: 14vh;
+  top: 21vh;
   width: 43vw;
   left: 3vw;
   text-align: center;
+  text-shadow: rgba(255, 255, 255, 0.2) .3vw .2vw .3vw;
 
 
 }
 
+#login_btn_main{
+  position: absolute;
+  top: 14vh;
+  // left: 3vw;
+  // width: 43vw;
+
+}
+
+
 .title{
   font-size: 3vw;
   color: white;
+  position: absolute;
+  top: -16vh;
+  width: 35vw;
+  left: 3vw;
+  text-shadow: rgba(255, 255, 255, 0.2) 3px 2px 3px;
+
 }
 
 h1{
@@ -298,7 +318,7 @@ h1{
 
 
 .secret_buttons{
-  
+
 }
 
 .add_secret{
@@ -339,6 +359,28 @@ h1{
 
 }
 
+
+@-webkit-keyframes blink {
+  0%   { opacity: .5; }
+  50%  { opacity: .9;}
+  100% { opacity: .5; }
+}
+@-moz-keyframes blink {
+  0%   { opacity: .5; }
+  50%  { opacity: .9;}
+  100% { opacity: .5; }
+}
+@-o-keyframes blink {
+  0%   { opacity: .5; }
+  50%  { opacity: .9;}
+  100% { opacity: .5; }
+}
+@keyframes blink {
+  0%   { opacity: .5; }
+  50%  { opacity: .9;}
+  100% { opacity: .5; }
+}
+
 .last_update{
   margin-top: 50px;
 }
@@ -346,4 +388,3 @@ h1{
 .secret_buttons{
   margin-top: 55px;
 }
-

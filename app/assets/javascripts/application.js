@@ -16,6 +16,7 @@
 //= require jquery.readyselector.js
 //= require location
 //= require map.js
+//= require sessions.js
 
 
 //= require bootstrap-sprockets
