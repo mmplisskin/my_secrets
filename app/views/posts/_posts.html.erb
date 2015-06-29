@@ -1,45 +1,54 @@
 
+	
+<div class = "current_user">
 	<h1>Hi, <%=@current_ouser.name %></h1>
-
-
-<div class="secrets">
-
-<div class="secrets_content">
-
-	<% if @current_ouser.latitude && @current_ouser.longitude %>
-
-    <div id="googleMap"></div>
-		<h3>
-			<div class = "last_update">Last Update was <%=  time_ago_in_words@current_ouser.updated_at%> ago
-			<h5>
-			from
-				latitude <%= @current_ouser.latitude.round(3) %>, &
-				longitude <%= @current_ouser.longitude.round(3) %>
-			</h5>
-			</div>
-		</h3>
-	<% end %>
-
-
-	<%= link_to'<i class="fa fa-plus"> New Secret</i>'.html_safe, new_post_path, class:'ui button inverted large'  %>
-
-	<% if @current_ouser.posts.size > 0  %>
-
-	<a class = "ui blue button large invert" id ="okbtn" >
-		<i class ="" id='spinner' ></i>
-	</a>
-
-
-<% end %>
-
-
-
-
 </div>
+<div class = "secrets_wrapper">
+
+	<div class = "secrets">
+
+		<div class = "secrets_content">
+
+			<% if @current_ouser.latitude && @current_ouser.longitude %>
+
+		    <div id = "googleMap"></div>
+			<h3>
+				<div class = "last_update">Last Update was <%=  time_ago_in_words@current_ouser.updated_at%> ago
+					<h5>
+					from
+						latitude <%= @current_ouser.latitude.round(3) %>, &
+						longitude <%= @current_ouser.longitude.round(3) %>
+					</h5>
+				</div>
+			</h3>
+			<% end %>
+
+
+			<%= link_to'<i class="fa fa-plus"> New Secret</i>'.html_safe, new_post_path, class:'ui button inverted large'  %>
+
+			<% if @current_ouser.posts.size > 0  %>
+
+			<a class = "ui blue button large invert" id ="okbtn" >
+				<i class ="" id='spinner' ></i>
+			</a>
+
+
+		<% end %>
+
+
+
+
+		</div>
+	</div>
+	<div class = "secret_posts">
+		<p>FILL WITH ACCORDIAN</p>	
+	</div>
+
+
 </div>
 		<% if @current_ouser.posts.size > 0  %>
 			<%#= render 'layouts/accordian' %>
 		<% end %>
 
 
-<p id="location"></p>
+<p id = "location"></p>
