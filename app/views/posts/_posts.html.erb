@@ -1,5 +1,5 @@
 
-	
+
 <div class = "current_user">
 	<h1>Hi, <%=@current_ouser.name %></h1>
 </div>
@@ -42,15 +42,14 @@
 	</div>
 	<div class = "secret_posts">
 
-		<p>FILL</p>	
-
+		<% if @current_ouser.posts.size > 0  %>
+			<%= render 'layouts/accordian' %>
+		<% end %>
 	</div>
 
 
 </div>
-		<% if @current_ouser.posts.size > 0  %>
-			<%#= render 'layouts/accordian' %>
-		<% end %>
+
 
 
 <p id = "location"></p>
