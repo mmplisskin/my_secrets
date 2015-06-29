@@ -26,6 +26,11 @@ namespace :user do
                 # sleep(2.seconds)
                 # UserMailer.secrets_email(@title,@description,@inac_name,@recipient).deliver
                 UserMailer.delay.secrets_email(@title,@description,@inac_name,@recipient)
+
+                puts "*****==== Destroying the secret =====*****"
+
+                post.destroy
+
               end
            end
 
