@@ -93,7 +93,7 @@ body {
   // background-attachment: fixed;
   // z-index: 10;
   width: 55vw;
-  height: 100vh;
+  height: 75vh;
   left: -5vw;
   top:-3;
   opacity: .6;
@@ -387,4 +387,19 @@ h1{
 
 .secret_buttons{
   margin-top: 4vh;
+}
+
+.italic{
+  font-style: italic;
+  color: white;
+}
+
+.session_text{
+  position: absolute;
+  top: 77vh;
+  left: 6vw;
+  width: 33
+  vw;
+  height: 40vh;
+  text-align: center;
 }
