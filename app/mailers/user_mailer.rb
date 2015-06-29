@@ -7,7 +7,9 @@ class UserMailer < ApplicationMailer
       @description = description
       @inac_name = inac_name
       @recipient = recipient
-      @greeting = "Hello, #{@inac_name} has a mesage for you from beyond time. #{@title}, #{@description}, "
+      @greeting = "Hello, #{@recipient}"
+      @greeting2 = "We regret to inform you that #{@inac_name} has gone inactive and has a secret for you:"
+
 
 
       mail to: @recipient, subject: "#{@inac_name} has a secret for you "
@@ -17,9 +19,12 @@ class UserMailer < ApplicationMailer
   def welcome_email(ouser_id)
       @ouser = Ouser.find(ouser_id)
       @email = @ouser.email
+      @name = @ouser.name
       @title = "Great to have you #{@ouser.name}"
       @subject = "Welcome! #{@ouser.name}"
-      @greeting = "Congrats  #{@ouser.name}. You have made a brilliant decision to keep your digital legacy safe! "
+      @greeting = "You have made a brilliant decision to keep your digital legacy safe! "
+      @info = "Your secrets can contain your social media login, financial accounts, life insurance, or a message to loved ones."
+      @info2 = "Please make sure to check in so we know that everything is ok."
     # else
       # @title = "Cheers #{ouser.name}"
       # @subject = "Good to know that everything is still awesome #{ouser.name}!"
