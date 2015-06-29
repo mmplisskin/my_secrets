@@ -398,7 +398,7 @@ h1{
   position: absolute;
   top: 77vh;
   left: 6vw;
-  width: 33 vw;
+  width: 33vw;
   height: 40vh;
   text-align: center;
 }
@@ -407,13 +407,20 @@ h1{
   position: absolute;
   top: 66vh;
   left: 9vw;
-  width: 33 vw;
+  width: 33vw;
   height: 40vh;
   text-align: center;
   color: grey;
 }
 
 .accordion_wrapper{
-  margin-top: 10vh;
+  margin-top: 6vh;
   background-color: #33334C;
+}
+
+.glyphicon.glyphicon-briefcase {
+  text-align: center;
+  top: 2vh;
+  color: lightgrey;
+  font-size: 4vh;
 }
