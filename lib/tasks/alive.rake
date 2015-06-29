@@ -24,6 +24,7 @@ namespace :user do
                 @recipient = recipient.email
                 puts "    $$$== we sent it to " + recipient.email + "==$$$"
                 # sleep(2.seconds)
+                # UserMailer.secrets_email(@title,@description,@inac_name,@recipient).deliver
                 UserMailer.delay.secrets_email(@title,@description,@inac_name,@recipient)
               end
            end
