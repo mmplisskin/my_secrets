@@ -13,9 +13,10 @@
 
 		    <div id = "googleMap"></div>
 			<h3>
-				<div class = "last_update">Last Update was <%=  time_ago_in_words@current_ouser.updated_at%> ago
+				<div class = "last_update">
+					Your secrets will be delivered in <%=  time_ago_in_words(@current_ouser.updated_at+10.minutes)%>
 					<h5>
-					from
+					Last Check in from:
 						latitude <%= @current_ouser.latitude.round(3) %>, &
 						longitude <%= @current_ouser.longitude.round(3) %>
 					</h5>
@@ -45,7 +46,7 @@
 		</div>
 	</div>
 	<div class = "secret_posts">
-
+		<span class="glyphicon glyphicon-briefcase"></span>
 		<% if @current_ouser.posts.size > 0  %>
 			<%= render 'layouts/accordian' %>
 		<% end %>
