@@ -14,8 +14,5 @@ namespace :recipient do
           puts  " ** " + recipient.email + " destroyed **"
         end
       end
-
-# Recipient.first.posts
-
   end
 end
