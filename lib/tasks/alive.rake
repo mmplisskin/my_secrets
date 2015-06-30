@@ -5,7 +5,7 @@ namespace :user do
 
     puts "*****==== checking for inactive users =====*****"
       #do not touch this line or add space it wont work if u add space
-    users = Ouser.where("updated_at > ?", 1.day.ago)
+    users = Ouser.where("updated_at < ?", 30.days.ago)
       #loop over erery user
       users.each do |user|
         puts "**==== here is " + user.name + " he is a dead guy ====**"
