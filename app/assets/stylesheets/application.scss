@@ -390,9 +390,24 @@ h1{
 }
 
 .italic{
+  position: absolute;
+  top: 2vh;
+  left: -1vw;
+  width: 34vw;
   font-style: italic;
   color: white;
 }
+
+.italic2{
+  position: absolute;
+  top: 56vh;
+  left: -1vw;
+  width: 24vw;
+  font-style: italic;
+  color: white;
+}
+
+
 
 .session_text{
   position: absolute;
