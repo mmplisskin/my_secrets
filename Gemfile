@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'nokogiri' '~> 1.6.6.2'
 # gem 'jquery-turbolinks'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
@@ -73,7 +74,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 
   gem "letter_opener", :group => :development
-  
+
   gem 'pry-byebug'
 
   gem 'byebug'
