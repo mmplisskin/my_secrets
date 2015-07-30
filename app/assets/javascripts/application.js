@@ -9,20 +9,28 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
-//= require jquery
-//= require bootstrap-tagsinput
+
+//= require jquery2
 //= require jquery_ujs
+//= require bootstrap-tagsinput
 //= require jquery.readyselector.js
 //= require location
 //= require map.js
 //= require sessions.js
 
 
-//= require bootstrap-sprockets
-//= require semantic-ui
+// $( document ).ready(function() {
+//     $('.button-collapse').sideNav();
+// });
+
+$(document).ready(function(){
+  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  $('.modal-trigger').leanModal();
+});
 
 
 
 
-// console.log("//= require jquery.turbolinks  //= require_tree .")
+
+
+// console.log("//= require jquery.turbolinks  //= require_tree . // = require semantic-ui // = require bootstrap-sprockets")

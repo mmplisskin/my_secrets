@@ -1,43 +1,54 @@
-<div class="secrets_form">
-<div class="col-md-3"></div>
-<div class="col-md-6"</div>
-<div class="secrets_form_fields">
-<%= bootstrap_form_for @post  do |f| %>
-
-	<%= f.text_field :title, label: "The Secret:" %>
-
- 	<%= f.text_area :description, label: "Secret Details:"%>
 
 
+<div class="row">
 
+<%= form_for @post, :html => {:class => "col s12"}  do |f| %>
 
-	<%# if current_ouser.posts.size < 0 %>
-		<%# current_ouser.posts.each do |post| %>
-				<%# post.recipients.each do |recipient| %>
-						<%#= recipient.email %>
+	<div class="row">
+		<div class="input-field col s12">
+			<%= f.text_field :title, class:"validate" %>
+				<label for="secret_title"></label>
+		</div>
+	</div>
 
-				<%# end %>
-			<%# end %>
-	<%# end %>
+	<div class="row">
+		<div class="input-field col s12">
+
+		<%= f.text_area :description, label: "Secret Details:", class:"materialize-textarea"%>
+		</div>
+	</div>
+
 
 	<% emails = []	%>
-
-<% @post.recipients.each do |recipient| %>
-
-<% emails << recipient.email %>
-
-
-
+	<% @post.recipients.each do |recipient| %>
+	<% emails << recipient.email %>
 	<% end %>
 
- 	<%= f.text_field :emails, value: emails.join(','), 'data-role' => 'tagsinput', label: "Recipient Emails:" %>
+<div class="row">
+	<div class="input-field col s12">
+
+		<%= f.label "Secret Recipients" %>
+ 			<%= f.text_area :emails, value: emails.join(','), 'data-role' => 'tagsinput', label: "Recipient Emails:", class:"materialize-textarea" %>
+	</div>
+</div>
+
+
+	<!-- <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons">send</i>
+  </button> -->
 		<center>
-	  		<%=  f.submit "Save Secret", class:'ui standard button inverted'%>
+	  		<%#=  f.submit "Save Secret", class:'ui standard button inverted'%>
 		</center>
 
 
 
 
 <% end %>
+
 </div>
+
+
+<div class="input-field col s6">
+				 <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+				 <label for="first_name">First Name</label>
 </div>

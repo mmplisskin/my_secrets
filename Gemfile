@@ -30,13 +30,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'sidekiq'
+
 gem 'sinatra', :require => nil
 
 gem 'unicorn'
 
 gem 'bootstrap-sass', '~> 3.3.4.1'
-
-gem 'bootstrap_form'
+#
+# gem 'bootstrap_form'
 
 gem 'font-awesome-sass'
 
@@ -45,12 +46,12 @@ gem 'clockwork'
 # gem 'nested_form'
 # gem "rails-bootstrap-helpers"
 # gem 'jquery-ui-rails'
-
-gem 'semantic-ui-rails'
+#
+# gem 'semantic-ui-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+#
+# gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -62,7 +63,7 @@ gem 'omniauth-facebook'
 #allows auth via google
 gem 'omniauth-google-oauth2'
 
-gem "rails-bootstrap-helpers"
+# gem "rails-bootstrap-helpers"
 
 
 group :production do

@@ -2,26 +2,40 @@
 <html>
 <head>
   <title>MySecrets</title>
-  <script src="//maps.googleapis.com/maps/api/js"></script>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'> -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
-  	<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
-
 </head>
 
 
   <%= render 'layouts/nav' %>
 
+    <body class="<%= controller_name %> <%= action_name %> grey lighten-2">
 
 
-  <body class="<%= controller_name %> <%= action_name %>">
-      <div class="container-fluid">
-      <%= yield %>
+      <!-- <div class="container"> -->
 
-        </div>
+        <div class="container">
+          <%= yield %>
+
+          <% if flash[:error] %>
+            <% flash[:error]%>
+              <div class="alert alert-danger" role="alert"><%= flash[:error] %></div>
+          <% end %>
+
+          <% if flash[:notice] %>
+            <div class="alert alert-info" role="alert"><%= flash[:notice] %></div>
+          <% end %>
+      </div>
+    <!-- </div> -->
+    <script src="//maps.googleapis.com/maps/api/js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
   </body>
 </html>
