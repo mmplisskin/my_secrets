@@ -57,7 +57,8 @@ class PostsController < ApplicationController
 				@post.ouser_id = current_ouser.id
 				redirect_to posts_path
 			else
-				render :new
+					flash.now.notice = @post.errors.full_messages
+					render :edit
 			end
 	end
 

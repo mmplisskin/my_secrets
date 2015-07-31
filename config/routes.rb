@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   delete "logout" => 'sessions#destroy'
 
   #route for oauth
-  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/:provider/callback', to: 'sessions#create', as: :omniauth
   delete '/logout', to: 'sessions#destroy'
 
   post 'i_am_ok' => 'ousers#imalive'
