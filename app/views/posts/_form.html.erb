@@ -34,7 +34,8 @@
 					<% emails << recipient.email %>
 					<% end %>
 
-			 			<%= f.text_area :emails, value: emails.join(','),'data-role' => 'tagsinput', id:"tags", placeholder: emails.each do |email| email end %>
+			 			<%= f.text_field :emails, value: emails.join(','),'data-role' => 'tagsinput', id:"tags", class:'form-control' %>
+
 				</div>
 			</div>
 		</div>
@@ -44,6 +45,10 @@
 	</button>
 	<% end %>
 </div>
+
+<script>
+
+</script>
 
 <!-- <div class="input-field col s6">
 				 <input placeholder="Placeholder" id="first_name" type="text" class="validate">
