@@ -1,5 +1,4 @@
 <div class="blue-grey lighten-4 inset-shadow">
-
 	<div class = "row">
 		<div class="col s8 offset-s1">
 			<h1 class="text-shadow">Hi, <%=@current_ouser.name %></h1>
@@ -10,12 +9,6 @@
 	<div class="card-panel col s12 lighten-5 blue-grey inset-shadow">
 
 
-		<!-- <div class = "row">
-
-			<div class="col s2 offset-s10">
-				<a href="/posts/new" class="btn waves-effect waves-light grey darken-4"><i class="fa fa-plus"></i> New Secret</a>
-			</div>
-		</div> -->
 <div class="card-panel col s12 secrets grey lighten-5">
 		<br>
 
@@ -27,15 +20,19 @@
 						<div class="col s6 map">
 							<div id = "googleMap"></div>
 						</div>
-						<div class="col s6">
-						<h5>
-							Your secrets will be delivered in <%=  time_ago_in_words(@current_ouser.updated_at+10.minutes)%>
-						</h5>
-						<h6>
-							Last Check in from:
-								latitude <%= @current_ouser.latitude.round(3) %>, &
-								longitude <%= @current_ouser.longitude.round(3) %>
-						</h6>
+					<div class="row">
+						<div class="col s6 offset-s center">
+							<h5>
+								Your secrets will be delivered in <%=  time_ago_in_words(@current_ouser.updated_at + 10.minutes)%>
+							</h5>
+							<h6 class="bold italic">
+								Last Check was from:
+									latitude <%= @current_ouser.latitude.round(3) %>, &
+									longitude <%= @current_ouser.longitude.round(3) %>
+
+							 <%=  time_ago_in_words(@current_ouser.updated_at)%> ago.
+							</h6>
+						</div>
 					</div>
 					<% end %>
 				</div>
@@ -44,7 +41,7 @@
 			<div class = "row">
 				<div class ="col s12 secret-buttons">
 
-						<a href="/posts/new" class="btn waves-effect waves-light grey darken-4"><i class="fa fa-plus"></i> New Secret</a>
+						<a href="/posts/new" class="btn waves-effect waves-light grey darken-4" id="new-secret"><i class="fa fa-plus"></i> New Secret</a>
 
 						<a class = "btn waves-effect waves-light indigo darken-3 z-depth-1" id ="okbtn" >
 							<i class ="" id='spinner' ></i>
@@ -56,7 +53,7 @@
 
 
 	</div>
-	<div class="card-panel col s12 secrets grey lighten-5">
+	<div class="card-panel col s12 secrets-acc grey lighten-5">
 		<div class="row">
 			<div class="col s12">
 				<h3 class="text-shadow"> Secrets</i> </h3>
@@ -82,11 +79,13 @@
 		        <div class="collapsible-body">
 
 							<div class="flow-text"><p><%= post.description %></p>
+								<h6>
 								<div class="collapsible-header">
 									<% post.recipients.each do |r| %>
 										<%= r.email %>
 										<% end %>
 								</div>
+							</h6>
 								<div class="collapsible-header">
 								<h6>
 									<div class="modify">

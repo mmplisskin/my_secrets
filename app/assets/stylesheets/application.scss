@@ -26,12 +26,63 @@
   /*
   //  *= require rails_bootstrap_forms
    */
+   //
+  //  @media (max-width: 768px) {
+  //     #okbtn{
+  //         width: 165px;
+  //     }
+  //     #new-secret{
+  //           width: 165px;
+   //
+  //     }
+   //
+  //    }
 
-   @media (max-width: 768px) {
+//iphone 6
+  @media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 667px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+
+      #new-secret{
+        margin-bottom: 10px;
+      }
+      // .map{
+      //   height: 192px;
+      //   height: 192px;
+      // }
+
+  }
+
+//iphone 6+
+  @media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+    #new-secret{
+      margin-bottom: 0px;
+    }
+
+    // .map{
+    //   height: 292px;
+    //   height: 192px;
+    // }
+
+}
+
+//all other smaller devices
+     @media (max-width: 320px) {
+        #okbtn{
 
 
+        }
+        #new-secret{
+          margin-bottom: 10px;
+        }
 
-     }
+       }
 
 
 .italic{
@@ -78,6 +129,15 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .fa-trash-o {
     color: black;
 }
+.secret-form{
+  padding:34px;
+      margin-top: 24px;
+}
+
+.secrets-acc{
+  height: 44vh;
+}
+
 // * {
 //   border-radius: 0 !important;
 // }
