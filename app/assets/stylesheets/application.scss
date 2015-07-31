@@ -84,6 +84,11 @@
 
        }
 
+ body {
+   overflow-y: scroll;
+ }
+
+
 
 .italic{
   font-style: italic;
@@ -131,11 +136,11 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 }
 .secret-form{
   padding:34px;
-      margin-top: 24px;
+  margin-top: 24px;
 }
 
 .secrets-acc{
-  height: 44vh;
+  margin-bottom: 10%;
 }
 
 // * {
