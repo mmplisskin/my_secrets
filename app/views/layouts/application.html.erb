@@ -25,14 +25,7 @@
         <div class="container">
           <%= yield %>
 
-          <% if flash[:error] %>
-            <% flash[:error]%>
-              <div class="alert alert-danger" role="alert"><%= flash[:error] %></div>
-          <% end %>
 
-          <% if flash[:notice] %>
-            <div class="alert alert-info" role="alert"><%= flash[:notice] %></div>
-          <% end %>
       </div>
     <!-- </div> -->
     <script src="//maps.googleapis.com/maps/api/js"></script>

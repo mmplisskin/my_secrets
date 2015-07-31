@@ -1,19 +1,21 @@
 
-
+<br>
 <div class="row">
 
-<%= form_for @post, :html => {:class => "col s12"}  do |f| %>
+<%= form_for @post, :html => {:class => "col s12 center"}  do |f| %>
 
 	<div class="row">
 		<div class="input-field col s12">
-			<%= f.text_field :title, class:"validate" %>
-				<label for="secret_title"></label>
+			<label for="Secret title">Secret Title</label>
+			<br>
+			<%=f.text_area :title, label:"Secret Title", class:"validate", class:"materialize-textarea"%>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="input-field col s12">
-
+		<label for="Secret">Secret</label>
+		<br>
 		<%= f.text_area :description, label: "Secret Details:", class:"materialize-textarea"%>
 		</div>
 	</div>
@@ -27,15 +29,16 @@
 <div class="row">
 	<div class="input-field col s12">
 
-		<%= f.label "Secret Recipients" %>
- 			<%= f.text_area :emails, value: emails.join(','), 'data-role' => 'tagsinput', label: "Recipient Emails:", class:"materialize-textarea" %>
+		<label for="Recipients">Recipients</label>
+		<br>
+ 			<%= f.text_area :emails, value: emails.join(','),'data-role' => 'tagsinput', label: "Recipient Emails:", class:"materialize-textarea", id:"tags" %>
 	</div>
 </div>
 
 
-	<!-- <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons">send</i>
-  </button> -->
+	<button class="btn waves-effect waves-light deep-purple" type="submit" name="action">Save Secret
+    <i class="fa fa-user-secret"></i>
+  </button>
 		<center>
 	  		<%#=  f.submit "Save Secret", class:'ui standard button inverted'%>
 		</center>
@@ -48,7 +51,7 @@
 </div>
 
 
-<div class="input-field col s6">
+<!-- <div class="input-field col s6">
 				 <input placeholder="Placeholder" id="first_name" type="text" class="validate">
 				 <label for="first_name">First Name</label>
-</div>
+</div> -->

@@ -19,7 +19,7 @@ $('.posts.index').ready(function () {
   checkAJAX();
 
   function initializeMAP() {
-
+    console.log("updated")
     var url = window.location.origin + window.location.pathname + ".json";
 
     $.get(url, function(results){
@@ -42,10 +42,26 @@ $('.posts.index').ready(function () {
           zoom:12,
           zoomControl:false,
           panControl:false,
+          zoomControl: false,
+          scaleControl: false,
+          streetViewControl: false,
+          overviewMapControl: false,
+          MapTypeControl:false,
+          disableDefaultUI: true,
           mapTypeId:google.maps.MapTypeId.ROADMAP
         };
 
         var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        google.maps.event.addDomListener(window, "resize", function() {
+          var center = map.getCenter();
+          google.maps.event.trigger(map, "resize");
+          map.setCenter(center);
+         });
+
+          google.maps.event.addListener(map, 'bounds_changed', function() {
+              var bounds = map.getBounds();
+          })
+
         var marker = new google.maps.Marker({
           position:myCenter
         });

@@ -41,7 +41,10 @@ function initialize() {
     url: "ousers/"+id,
     data: { ouser: { latitude: lat, longitude: long}},
     dataType: 'json',
+
   })
+
+
 
   $( '#spinner' ).removeClass("fa-spin")
   $( '#spinner' ).removeClass("fa fa-refresh")
@@ -61,7 +64,7 @@ $( '.maptrigger' ).removeClass('mapget')
 $(document).on("ready page:load", function(){
 
       $( '#spinner' ).addClass("fa fa-refresh")
-      $( '#okbtn i' ).html(' Check In')
+      $( '#okbtn i' ).html(" check in")
       $( '#okbtn' ).click(function() {
       $( '#okbtn i' ).html('')
         $( '#spinner' ).addClass("fa-spin")
