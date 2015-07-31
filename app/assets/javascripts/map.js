@@ -1,7 +1,7 @@
-
-google.maps.event.addDomListener(window, 'load', initialize);
-google.maps.event.addDomListener(window, 'page:load', initialize);
-
+//
+// google.maps.event.addDomListener(window, 'load', initialize);
+// google.maps.event.addDomListener(window, 'page:load', initialize);
+//
 
 $('.posts.index').ready(function () {
 
@@ -18,7 +18,7 @@ $('.posts.index').ready(function () {
 
   checkAJAX();
 
-  function initializeMAP() {
+function initializeMAP() {
     console.log("updated")
     var url = window.location.origin + window.location.pathname + ".json";
 

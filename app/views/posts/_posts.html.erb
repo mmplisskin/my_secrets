@@ -62,7 +62,7 @@
 
 		<% if @current_ouser.posts.size > 0  %>
 			<%#= render 'layouts/accordian' %>
-		<% end %>
+
 		<ul class="collapsible popout" data-collapsible="accordion">
 		    <% @posts.each do |post| %>
 		      <li>
@@ -101,7 +101,7 @@
 
 				<% end %>
 		  </ul>
-
+	<% end %>
 	</div>
 
 
@@ -112,62 +112,3 @@
 <div class = "italic center">
 	<p>"Secrets are things we give to others to keep for us." - Elbert Hubbard</p>
 </div>
-
-<!-- <div class = "current_user">
-	<h1>Hi, <%=@current_ouser.name %></h1>
-</div>
-<div class = "secrets_wrapper">
-
-	<div class = "secrets">
-
-		<div class = "secrets_content">
-
-			<% if @current_ouser.latitude && @current_ouser.longitude %>
-
-		    <div id = "googleMap"></div>
-			<h3>
-				<div class = "last_update">
-					Your secrets will be delivered in <%=  time_ago_in_words(@current_ouser.updated_at+10.minutes)%>
-					<h5>
-					Last Check in from:
-						latitude <%= @current_ouser.latitude.round(3) %>, &
-						longitude <%= @current_ouser.longitude.round(3) %>
-					</h5>
-				</div>
-			</h3>
-			<% end %>
-
-			<div class = "secret_buttons">
-				<%= link_to'<i class="fa fa-plus"> New Secret</i>'.html_safe, new_post_path, class:'ui button inverted large'  %>
-
-				<% if @current_ouser.posts.size > 0  %>
-
-				<a class = "ui blue button large invert" id ="okbtn" >
-					<i class ="" id='spinner' ></i>
-				</a>
-
-
-				<% end %>
-				<br><br>
-				<div class = "italic2">
-					<p>"Secrets are things we give to others to keep for us." - Elbert Hubbard</p>
-				</div>
-			</div>
-
-
-
-		</div>
-	</div>
-	<div class = "secret_posts">
-		<span class="glyphicon glyphicon-briefcase"></span>
-		<% if @current_ouser.posts.size > 0  %>
-			<%#= render 'layouts/accordian' %>
-		<% end %>
-	</div>
-
-
-</div>
-
-
-
-<p id = "location"></p> -->

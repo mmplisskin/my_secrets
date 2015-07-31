@@ -22,17 +22,19 @@
 			</div>
 
 
-			<% emails = []	%>
-			<% @post.recipients.each do |recipient| %>
-			<% emails << recipient.email %>
-			<% end %>
+
 
 			<div class="row">
 				<div class="input-field col s12">
 
 					<label for="Recipients">Recipients</label>
 					<br>
-			 			<%= f.text_area :emails, value: emails.join(','),'data-role' => 'tagsinput', label: "Recipient Emails:", class:"materialize-textarea", id:"tags" %>
+					<% emails = []	%>
+					<% @post.recipients.each do |recipient| %>
+					<% emails << recipient.email %>
+					<% end %>
+
+			 			<%= f.text_area :emails, value: emails.join(','),'data-role' => 'tagsinput', id:"tags", placeholder: emails.each do |email| email end %>
 				</div>
 			</div>
 		</div>
