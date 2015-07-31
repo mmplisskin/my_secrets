@@ -1,101 +1,56 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
-
  *= require_self
  *= require bootstrap-tagsinput
- */
+*/
 
- // @import "bootstrap-sprockets";
- // @import "bootstrap";
 
- @import "font-awesome-sprockets";
-  @import "font-awesome";
-  // @import "semantic-ui";
-  // @import "semantic-ui/collections/menu";
 
-  /*
-  //  *= require rails_bootstrap_forms
-   */
-   //
-  //  @media (max-width: 768px) {
-  //     #okbtn{
-  //         width: 165px;
-  //     }
-  //     #new-secret{
-  //           width: 165px;
-   //
-  //     }
-   //
-  //    }
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 //iphone 6
-  @media only screen
-    and (min-device-width: 375px)
-    and (max-device-width: 667px)
-    and (-webkit-min-device-pixel-ratio: 2)
-    and (orientation: portrait) {
-
-      #new-secret{
-        margin-bottom: 10px;
-      }
-      // .map{
-      //   height: 192px;
-      //   height: 192px;
-      // }
-
-  }
-
-//iphone 6+
-  @media only screen
-  and (min-device-width: 414px)
-  and (max-device-width: 736px)
-  and (-webkit-min-device-pixel-ratio: 3) {
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
 
     #new-secret{
-      margin-bottom: 0px;
+      margin-bottom: 10px;
     }
+}
 
-    // .map{
-    //   height: 292px;
-    //   height: 192px;
-    // }
+//iphone 6+
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3) {
 
+  #new-secret{
+    margin-bottom: 0px;
+  }
 }
 
 //all other smaller devices
-     @media (max-width: 320px) {
-        #okbtn{
+@media (max-width: 320px) {
 
+  #new-secret{
+    margin-bottom: 10px;
+  }
 
-        }
-        #new-secret{
-          margin-bottom: 10px;
-        }
-
-       }
+ }
 
  body {
    overflow-y: scroll;
  }
 
 
-
 .italic{
   font-style: italic;
 }
-.landing{
 
-}
+
+
 .inset-shadow{
   -webkit-box-shadow: inset -2px -4px 4px 3px rgba(0,0,0,0.72);
   -moz-box-shadow: inset -2px -4px 4px 3px rgba(0,0,0,0.72);
@@ -114,17 +69,14 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .modal{
       width: 43%;
 }
+
 .secrets{
     margin: 12px;
 }
+
 .map{
       margin-bottom: 18px;
 }
-
-.col.s12.secret-buttons {
-
-}
-
 
 .modify{
   padding-top: 12px;
@@ -134,6 +86,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .fa-trash-o {
     color: black;
 }
+
 .secret-form{
   padding:34px;
   margin-top: 24px;
@@ -143,85 +96,20 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
   margin-bottom: 10%;
 }
 
-// * {
-//   border-radius: 0 !important;
-// }
-//
-//
-// html{
-//   margin: 0 auto;
-//   font-family: 'Open Sans Condensed', sans-serif;
-// }
-//
-// .container{
-//   margin: 0 auto;
-// }
-//
-// textarea {
-//    resize: none;
-//    width: 3vw;
-// }
-//
-// body {
-//
-//  }
-//
-// .b{
-//   color:black;
-// }
-//
+
 .bootstrap-tagsinput {
   width: 100% !important;
 }
-//
-// #hidden{
-//   position: absolute;
-//   display: none;
-// }
-//
-// #login{
-//   position: absolute;
-//   top: 61.5vh;
-//   left:68vw;
-//   // left: 34em;
-// }
-//
+
 .secrets_img{
   -webkit-animation: blink 5s infinite;
     -moz-animation:    blink 5s infinite;
     -o-animation:      blink 5s infinite;
     animation:         blink 5s infinite;
-  // width: 55vw;
-  // height: 75vh;
-  // left: -5vw;
-  // top:-3;
-  opacity: .6;
-  // position: absolute;
+    opacity: .6;
 
 }
-//
-// .control-label{
-//   color: white;
-//   margin-bottom: 1vw;
-//   margin-top: .5vw;
-// }
-//
-// textarea.form-control{
-//   height: 6vw;
-// }
-//
-// .current_user{
-//   position: absolute;
-//   font-size: 1vw;
-//   color: white;
-//   left: 11vw;
-//
-// }
-//
-// .menu{
-//   opacity: .8;
-// }
-//
+
 .sessions{
   background: rgba(121,124,153,1);
   background: -moz-linear-gradient(top, rgba(121,124,153,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.71) 100%);
@@ -235,7 +123,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
   -webkit-box-shadow: inset 0 0 10px #000000;
   box-shadow:         inset 0 0 10px #000000;
 }
-//
+
 .posts{
   height: 100vh;
   background: rgba(36,34,38,0.45);
@@ -247,9 +135,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
   background: linear-gradient(to bottom, rgba(36,34,38,0.45) 0%, rgba(36,34,38,0.85) 43%, rgba(71,60,93,0.99) 98%, rgba(81,71,108,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242226', endColorstr='#51476c', GradientType=0 );
 }
-.secrets{
-  // height: 70vh;
-}
+
 
 .alert-success {
     color: #3c763d;
@@ -268,110 +154,6 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     border-radius: 4px;
 }
 
-
-
-
-
-
-
-//
-//
-// .modal-dialog{
-//   position: absolute;
-//   top: 18vh;
-//   left: 35vw;
-//
-//
-// }
-//
-//
-// .modal-body{
-//   -moz-box-shadow:    inset 0 0 10px #000000;
-//   -webkit-box-shadow: inset 0 0 10px #000000;
-//   box-shadow:         inset 0 0 10px #000000;
-//
-//   text-align: center;
-//
-// }
-//
-// .modal-header{
-//   background: rgba(171,171,171,1);
-//   background: -moz-linear-gradient(top, rgba(171,171,171,1) 0%, rgba(166,166,166,1) 50%, rgba(158,158,158,1) 51%, rgba(191,191,191,1) 100%);
-//   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(171,171,171,1)), color-stop(50%, rgba(166,166,166,1)), color-stop(51%, rgba(158,158,158,1)), color-stop(100%, rgba(191,191,191,1)));
-//   background: -webkit-linear-gradient(top, rgba(171,171,171,1) 0%, rgba(166,166,166,1) 50%, rgba(158,158,158,1) 51%, rgba(191,191,191,1) 100%);
-//   background: -o-linear-gradient(top, rgba(171,171,171,1) 0%, rgba(166,166,166,1) 50%, rgba(158,158,158,1) 51%, rgba(191,191,191,1) 100%);
-//   background: -ms-linear-gradient(top, rgba(171,171,171,1) 0%, rgba(166,166,166,1) 50%, rgba(158,158,158,1) 51%, rgba(191,191,191,1) 100%);
-//   background: linear-gradient(to bottom, rgba(171,171,171,1) 0%, rgba(166,166,166,1) 50%, rgba(158,158,158,1) 51%, rgba(191,191,191,1) 100%);
-//   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ababab', endColorstr='#bfbfbf', GradientType=0 );
-// }
-//
-// .secrets_info{
-//
-//   width: 50vw;
-//   height: 82.5vh;
-//   opacity: .8;
-//   position: absolute;
-//   top: 5vh;
-//   left: 47vw;
-//
-//   -moz-box-shadow:    inset .1vw .1vw .9vw .1vw #000000;
-//   -webkit-box-shadow: inset .1vw .1vw .9vw .1vw #000000;
-//   box-shadow:         inset .1vw .1vw .9vw .1vw #000000;
-//   z-index: -1;
-//   background: rgba(76,76,76,1);
-//   background: -moz-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
-//   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(76,76,76,1)), color-stop(12%, rgba(89,89,89,0.9)), color-stop(36%, rgba(102,102,102,0.7)), color-stop(100%, rgba(19,19,19,0.16)));
-//   background: -webkit-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
-//   background: -o-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
-//   background: -ms-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
-//   background: linear-gradient(to bottom, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
-//   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
-//
-// }
-//
-// .secrets_text{
-//   line-height: 200%;
-//   position: absolute;
-//   top: 21vh;
-//   width: 43vw;
-//   left: 3vw;
-//   text-align: center;
-//   text-shadow: rgba(255, 255, 255, 0.2) .3vw .2vw .3vw;
-//
-//
-// }
-//
-// #login_btn_main{
-//   position: absolute;
-//   top: 14vh;
-//   // left: 3vw;
-//   // width: 43vw;
-//
-// }
-//
-//
-// .title{
-//   font-size: 3vw;
-//   color: white;
-//   position: absolute;
-//   top: -16vh;
-//   width: 35vw;
-//   left: 3vw;
-//   text-shadow: rgba(255, 255, 255, 0.2) 3px 2px 3px;
-//
-// }
-//
-// h1{
-//   // font-size: 3vw;
-// }
-//
-// #social{
-//   margin-bottom: 1vw;
-//
-// }
-//
-//
-//
 #googleMap{
 
   width: 100%;
@@ -382,115 +164,6 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
   width: 79vw;
   height: 162px;
 }
-
-//
-//
-//
-// .secrets{
-//
-//   width: 31.2vw;
-//   height: 76vh;
-//   opacity: .8;
-//   position: absolute;
-//   top: 17vh;
-//   left: 9.5vw;
-//   text-align: center;
-//
-//   -moz-box-shadow:    inset 0 10 10px #000000;
-//   -webkit-box-shadow: inset 0 10 10px #000000;
-//   box-shadow:         inset 0 10 10px #000000;
-//
-//   background: rgba(76,76,76,1);
-//   background: -moz-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
-//   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(76,76,76,1)), color-stop(12%, rgba(89,89,89,0.9)), color-stop(36%, rgba(102,102,102,0.7)), color-stop(100%, rgba(19,19,19,0.16)));
-//   background: -webkit-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
-//   background: -o-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
-//   background: -ms-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
-//   background: linear-gradient(to bottom, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
-//   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
-//
-// }
-//
-// .secrets_content{
-//
-//   width: 21vw;
-//   height: 54vh;
-//   opacity: .8;
-//   position: absolute;
-//   top: 10vh;
-//   left: 5.5vw;
-//   text-align: center;
-//   -webkit-box-shadow: -10px 10px 20px 1px #2A2E45;
-//   box-shadow: -10px 10px 20px 1px #2A2E45;
-//
-// }
-
-// .secret_posts{
-//
-//   width: 45vw;
-//   height: 76vh;
-//   opacity: .8;
-//   position: absolute;
-//   top: 17vh;
-//   left: 46.5vw;
-//   text-align: center;
-//   background: rgba(76,76,76,1);
-//   background: -moz-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
-//   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(76,76,76,1)), color-stop(12%, rgba(89,89,89,0.9)), color-stop(36%, rgba(102,102,102,0.7)), color-stop(100%, rgba(19,19,19,0.16)));
-//   background: -webkit-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
-//   background: -o-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
-//   background: -ms-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
-//   background: linear-gradient(to bottom, rgba(76,76,76,1) 0%, rgba(89,89,89,0.9) 12%, rgba(102,102,102,0.7) 36%, rgba(19,19,19,0.16) 100%);
-//   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
-//   -webkit-box-shadow: 10px 10px 20px 1px #2A2E45;
-//   box-shadow: 10px 10px 20px 1px #2A2E45;
-//
-// }
-//
-//
-//
-// .secret_buttons{
-//
-// }
-//
-// .add_secret{
-//   z-index: 1;
-// }
-
-// .secrets_form{
-//   position: absolute;
-//   top: 18vh;
-//   left: 15vw;
-//   width: 68vw;
-//   height: 40vw;
-//   background: rgba(83,87,127,1);
-//   background: -moz-linear-gradient(top, rgba(83,87,127,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.74) 100%);
-//   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(83,87,127,1)), color-stop(2%, rgba(71,72,108,0.99)), color-stop(57%, rgba(42,41,46,0.85)), color-stop(100%, rgba(42,41,46,0.74)));
-//   background: -webkit-linear-gradient(top, rgba(83,87,127,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.74) 100%);
-//   background: -o-linear-gradient(top, rgba(83,87,127,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.74) 100%);
-//   background: -ms-linear-gradient(top, rgba(83,87,127,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.74) 100%);
-//   background: linear-gradient(to bottom, rgba(83,87,127,1) 0%, rgba(71,72,108,0.99) 2%, rgba(42,41,46,0.85) 57%, rgba(42,41,46,0.74) 100%);
-//   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#53577f', endColorstr='#2a292e', GradientType=0 );
-//   -moz-box-shadow:    inset 0 0 10px #000000;
-//   -webkit-box-shadow: inset 0 0 10px #000000;
-//   box-shadow:         inset 0 0 10px #000000;
-//   -webkit-box-shadow: 5px -6px 12px 0px rgba(211, 211, 211, 0.84);
-//   -moz-box-shadow:    5px -6px 12px 0px rgba(211, 211, 211, 0.84);
-//   box-shadow:         5px -6px 12px 0px rgba(211, 211, 211, 0.84);
-//
-//
-// }
-//
-//
-// .secrets_form_fields{
-//   position: absolute;
-//   top: 13vh;
-//   left: 2vw;
-//   width: 30vw;
-//   height: 40vh;
-//
-// }
-
 
 @-webkit-keyframes blink {
   0%   { opacity: .5; }
@@ -512,59 +185,6 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
   50%  { opacity: .9;}
   100% { opacity: .5; }
 }
-//
-// .last_update{
-//   margin-top: 6vh;
-// }
-//
-// .secret_buttons{
-//   margin-top: 4vh;
-// }
-//
-// .italic{
-//   position: absolute;
-//   top: 2vh;
-//   left: -1vw;
-//   width: 34vw;
-//   font-style: italic;
-//   color: white;
-// }
-//
-// .italic2{
-//   position: absolute;
-//   top: 56vh;
-//   left: -1vw;
-//   width: 24vw;
-//   font-style: italic;
-//   color: white;
-// }
-//
-//
-//
-// .session_text{
-//   position: absolute;
-//   top: 77vh;
-//   left: 6vw;
-//   width: 33vw;
-//   height: 40vh;
-//   text-align: center;
-// }
-//
-//
-// .example_text{
-//   position: absolute;
-//   top: 61vh;
-//   left: 20vw;
-//   width: 27vw;
-//   height: 40vh;
-//   text-align: center;
-//   color: grey;
-// }
-//
-// .accordion_wrapper{
-//   margin-top: 6vh;
-//   background-color: #33334C;
-// }
 
 .glyphicon.glyphicon-briefcase {
   text-align: center;
