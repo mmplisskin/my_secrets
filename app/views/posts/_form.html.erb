@@ -1,43 +1,53 @@
-<div class="secrets_form">
-<div class="col-md-3"></div>
-<div class="col-md-6"</div>
-<div class="secrets_form_fields">
-<%= bootstrap_form_for @post  do |f| %>
+<div class="card-panel col s12 lighten-5 blue-grey inset-shadow secret-form center">
+	<div class="card-panel modify">
+	<br>
+	<div class="row">
 
-	<%= f.text_field :title, label: "The Secret:" %>
+		<%= form_for @post, :html => {:class => "col s12"}  do |f| %>
 
- 	<%= f.text_area :description, label: "Secret Details:"%>
+			<div class="row">
+				<div class="input-field col s12">
+					<label for="Secret title">Secret Title</label>
+					<br>
+					<%=f.text_area :title, label:"Secret Title", class:"validate", class:"materialize-textarea"%>
+				</div>
+			</div>
 
+			<div class="row">
+				<div class="input-field col s12">
+				<label for="Secret">Secret</label>
+				<br>
+				<%= f.text_area :description, label: "Secret Details:", class:"materialize-textarea"%>
+				</div>
+			</div>
 
+			<div class="row">
+				<div class="input-field col s12">
 
+					<label for="Recipients">Recipients</label>
+					<br>
+					<% emails = []	%>
+					<% @post.recipients.each do |recipient| %>
+					<% emails << recipient.email %>
+					<% end %>
 
-	<%# if current_ouser.posts.size < 0 %>
-		<%# current_ouser.posts.each do |post| %>
-				<%# post.recipients.each do |recipient| %>
-						<%#= recipient.email %>
+			 			<%= f.text_field :emails, value: emails.join(','),'data-role' => 'tagsinput', id:"tags", class:'form-control' %>
 
-				<%# end %>
-			<%# end %>
-	<%# end %>
-
-	<% emails = []	%>
-
-<% @post.recipients.each do |recipient| %>
-
-<% emails << recipient.email %>
-
-
-
+				</div>
+			</div>
+		</div>
+	</div>
+	<button class="btn waves-effect waves-light deep-purple" type="submit" name="action">Save Secret
+		<i class="fa fa-user-secret"></i>
+	</button>
 	<% end %>
-
- 	<%= f.text_field :emails, value: emails.join(','), 'data-role' => 'tagsinput', label: "Recipient Emails:" %>
-		<center>
-	  		<%=  f.submit "Save Secret", class:'ui standard button inverted'%>
-		</center>
-
-
-
-
-<% end %>
 </div>
-</div>
+
+<script>
+
+</script>
+
+<!-- <div class="input-field col s6">
+				 <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+				 <label for="first_name">First Name</label>
+</div> -->

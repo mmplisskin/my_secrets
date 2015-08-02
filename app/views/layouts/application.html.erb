@@ -2,26 +2,43 @@
 <html>
 <head>
   <title>MySecrets</title>
-  <script src="//maps.googleapis.com/maps/api/js"></script>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+  <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'> -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
-  	<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
-
 </head>
 
 
   <%= render 'layouts/nav' %>
 
+    <body class="<%= controller_name %> <%= action_name %> grey lighten-2">
 
 
-  <body class="<%= controller_name %> <%= action_name %>">
-      <div class="container-fluid">
-      <%= yield %>
+      <!-- <div class="container"> -->
 
-        </div>
+        <div class="container">
+
+          <% flash.each do |name, msg| %>
+          <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
+            <button type="button" class="close btn indigo darken-3" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+            <%= msg %>
+          <% end %>
+        <% end %>
+
+          <%= yield %>
+
+
+      </div>
+    <!-- </div> -->
+    <script src="//maps.googleapis.com/maps/api/js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
   </body>
 </html>

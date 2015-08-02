@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 	before_action :authorized?
 
 	def index
-		# if @current_ouser
+
 			@posts = Post.where(ouser_id: current_ouser.id)
 				respond_to do |format|
 		        format.html {
@@ -13,9 +13,6 @@ class PostsController < ApplicationController
 	            render json: @posts.to_json(:include => :ouser)
 	          }
 				end
-		# 	else
-		# 		redirect_to login_path
-	  # end
 	end
 
 	def new
@@ -57,7 +54,8 @@ class PostsController < ApplicationController
 				@post.ouser_id = current_ouser.id
 				redirect_to posts_path
 			else
-				render :new
+					flash.now.notice = @post.errors.full_messages
+					render :edit
 			end
 	end
 
@@ -70,11 +68,11 @@ class PostsController < ApplicationController
 	def update
 
 		@post = Post.find(params[:id])
-		# Step 1: Delete all existing recipients
+		# Delete all existing recipients
 		@post.recipients.delete_all
 
 		emails_as_array = params['post']['emails'].split(',')
-		# Step 2: Add in all recipients fresh
+		#  Add in all recipients fresh
 		emails_as_array.each do |recipient|
 			person = Recipient.find_or_create_by(email: recipient)
 			@post.recipients << person
@@ -102,10 +100,10 @@ class PostsController < ApplicationController
 		end
 
 		def refresh_post_recipients(the_post, emails_as_array)
-			# Step 1: Delete all existing recipients
+			# Delete all existing recipients
 			the_post.recipients.delete_all
 
-			# Step 2: Add in all recipients fresh
+			#  Add in all recipients fresh
 			emails_as_array.each do |recipient|
 				person = Recipient.find_or_create_by(email: recipient)
 				the_post.recipients << person
