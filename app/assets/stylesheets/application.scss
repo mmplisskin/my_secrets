@@ -19,8 +19,8 @@
       margin-bottom: 10px;
     }
 }
-
-//iphone 6+
+/*
+//iphone 6+*/
 @media only screen
 and (min-device-width: 414px)
 and (max-device-width: 736px)
@@ -31,7 +31,7 @@ and (-webkit-min-device-pixel-ratio: 3) {
   }
 }
 
-//all other smaller devices
+/*//all other smaller devices*/
 @media (max-width: 320px) {
 
   #new-secret{
