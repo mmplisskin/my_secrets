@@ -1,4 +1,5 @@
 function initialize() {
+  
   console.log("init")
 
     var x = document.getElementById("location")
@@ -14,7 +15,7 @@ function initialize() {
           x.innerHTML = "Geolocation is not supported by this browser.";
       }
 
-      
+
   }
 
   function showPosition(position) {
