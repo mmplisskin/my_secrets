@@ -9,10 +9,12 @@ function initialize() {
       if (navigator.geolocation) {
             console.log("in if nav")
           navigator.geolocation.getCurrentPosition(showPosition);
-              // console.log(navigator.geolocation.getCurrentPosition)
+
       } else {
           x.innerHTML = "Geolocation is not supported by this browser.";
       }
+
+      
   }
 
   function showPosition(position) {
@@ -45,7 +47,7 @@ function initialize() {
   })
 
 
-
+  console.log("Ajaax succes")
   $( '#spinner' ).removeClass("fa-spin")
   $( '#spinner' ).removeClass("fa fa-refresh")
   $( '#spinner' ).addClass('fa fa-check')
@@ -70,7 +72,7 @@ $(document).on("ready page:load", function(){
         $( '#spinner' ).addClass("fa-spin")
 
         initialize()
-        console.log('get running')
+        // console.log('get running')
 
       });
   })

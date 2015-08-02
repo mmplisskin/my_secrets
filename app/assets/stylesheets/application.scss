@@ -18,6 +18,11 @@
     #new-secret{
       margin-bottom: 10px;
     }
+  #okbtn.btn{
+    /*margin-left: 10px;*/
+    margin-bottom: 10px
+  }
+
 }
 /*
 //iphone 6+*/
@@ -27,7 +32,7 @@ and (max-device-width: 736px)
 and (-webkit-min-device-pixel-ratio: 3) {
 
   #new-secret{
-    margin-bottom: 0px;
+    margin-bottom: 0px !important;
   }
 }
 
@@ -35,7 +40,7 @@ and (-webkit-min-device-pixel-ratio: 3) {
 @media (max-width: 320px) {
 
   #new-secret{
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
 
  }
