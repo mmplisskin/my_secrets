@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/mmplisskin/my_secrets.svg?branch=travis)](https://travis-ci.org/mmplisskin/my_secrets)
 #My Secrets
-###my Secrets is a digital locker that emails recipients when the user goes inactive
+###my Secrets is a digital locker that emails recipients when the user goes inactive 
 
  <br />
 
@@ -20,6 +20,7 @@
 - 12 factor
 
 ## Highlights
+Deployed at my-secrets.co with ssl.
 
 #### Testing
 - Rspec controller and model spec
