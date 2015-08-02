@@ -9,9 +9,6 @@
 
 $(document).ready(function(){
 
-  if (/iPad|iPhone|iPod/.test(navigator.platform)){
-    alert("Please remember to have location services enabled to use my secrets on IOS")
-  }
 
 
 
