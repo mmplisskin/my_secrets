@@ -90,9 +90,9 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
   margin-top: 24px;
 }
 
-.secrets-acc{
+/*.secrets-acc{
   margin-bottom: 10%;
-}
+}*/
 
 
 .bootstrap-tagsinput {
@@ -189,4 +189,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
   top: 2vh;
   color: lightgrey;
   font-size: 4vh;
+}
+
+.collapsible-body{
+      word-wrap: break-word;
 }
