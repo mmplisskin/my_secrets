@@ -16,22 +16,30 @@
 
 		<div class="col s12">
 			<% if @current_ouser.latitude && @current_ouser.longitude %>
+				<% if @current_ouser.posts.length > 0 %>
 					<div class="col s12">
 						<div class="col s6 map">
+
 							<div id = "googleMap"></div>
+
 						</div>
+						<% else %>
+							<h5> Add Some Secrets to get started. </h5>
+						<% end %>
 					<div class="row">
 						<div class="col s6 offset-s center">
-							<h5>
-								Your secrets will be delivered in <%=  time_ago_in_words(@current_ouser.updated_at + 30.days)%>
-							</h5>
-							<h6 class="bold italic">
-								Last Check was from:
-									latitude <%= @current_ouser.latitude.round(3) %>, &
-									longitude <%= @current_ouser.longitude.round(3) %>
+							<% if @current_ouser.posts.length > 0 %>
+								<h5>
+									Your secrets will be delivered in <%=  time_ago_in_words(@current_ouser.updated_at + 30.days)%>
+								</h5>
+								<h6 class="bold italic">
+									Last Check was from:
+										latitude <%= @current_ouser.latitude.round(3) %>, &
+										longitude <%= @current_ouser.longitude.round(3) %>
 
-							 <%=  time_ago_in_words(@current_ouser.updated_at)%> ago.
-							</h6>
+								 <%=  time_ago_in_words(@current_ouser.updated_at)%> ago.
+								</h6>
+							<% end %>
 						</div>
 					</div>
 					<% end %>
@@ -42,25 +50,28 @@
 				<div class ="col s12 secret-buttons">
 
 						<a href="/posts/new" class="btn waves-effect waves-light grey darken-4 tooltipped" data-position="top" data-delay="10" data-tooltip="New Secret" id="new-secret"><i class="fa fa-plus"></i> New Secret</a>
-
-						<a class = "btn waves-effect waves-light indigo darken-3 z-depth-1 tooltipped" data-position="top" data-delay="10" data-tooltip="Check in"  id ="okbtn" >
-							<i class ="" id='spinner' ></i>
-						</a>
-
+						<% if @current_ouser.posts.length > 0 %>
+							<a class = "btn waves-effect waves-light indigo darken-3 z-depth-1 tooltipped" data-position="top" data-delay="10" data-tooltip="Check in"  id ="okbtn" >
+								<i class ="" id='spinner' ></i>
+							</a>
+						<% end %>
 					</div>
 				</div>
 
 
 
 	</div>
-	<div class="card-panel col s12 secrets-acc grey lighten-5">
-		<div class="row">
-			<div class="col s12">
-				<h3 class="text-shadow"> Secrets</i>
-				<i class="fa fa-lock"></i>
-				 </h3>
+
+	<% if @current_ouser.posts.length > 0 %>
+		<div class="card-panel col s12 secrets-acc grey lighten-5">
+			<div class="row">
+				<div class="col s12">
+					<h3 class="text-shadow"> Secrets</i>
+					<i class="fa fa-lock"></i>
+					 </h3>
+				</div>
 			</div>
-		</div>
+		<% end %>
 
 		<% if @current_ouser.posts.size > 0  %>
 			<%#= render 'layouts/accordian' %>
