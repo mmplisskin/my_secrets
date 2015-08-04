@@ -9,7 +9,7 @@ module Clockwork
 
 
   # every(10.seconds, 'rake alive:check')
-  every(10.minutes, 'rake recipient clear'){
+  every(1.week, 'rake recipient clear'){
     `rake recipient:clear`
   }
 
@@ -17,5 +17,10 @@ module Clockwork
   every(10.minutes, 'rake alive'){
     `rake user:alive`
   }
+
+  every(12.hours , 'rake user notify'){
+    `rake user:notify`
+  }
+
 
 end

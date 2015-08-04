@@ -35,6 +35,22 @@ class UserMailer < ApplicationMailer
   end
 
 
+  def notify_email(title,description,inac_name,recipient)
+
+      @title = title
+      @description = description
+      @inac_name = inac_name
+      @recipient = recipient
+      @greeting = "Hello, #{@recipient}"
+      @greeting2 = @description
+
+
+
+      mail to: @recipient, subject: "#{@inac_name} needs to check in."
+
+    end
+
+
 
 
 end
