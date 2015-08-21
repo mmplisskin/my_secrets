@@ -8,7 +8,8 @@ $('.posts.index').ready(function () {
   function checkAJAX(){
     if ($( '.maptrigger' ).hasClass('mapget')){
       console.log("success class")
-        initializeMAP();
+        // initializeMAP();
+        location.reload();
 
     }
     else{
@@ -74,7 +75,9 @@ function initializeMAP() {
 
     }
   }
-  );}
+  );
+
+}
 
   google.maps.event.addDomListener(window, 'load', initializeMAP);
 
