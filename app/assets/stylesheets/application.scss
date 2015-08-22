@@ -22,7 +22,25 @@
     /*margin-left: 10px;*/
     margin-bottom: 10px
   }
+  #modal1{
+    top: 30% !important;
+  }
 
+  .left{
+    padding-top: 1em
+  }
+
+}
+h1{
+  font-size: 3.6rem;
+}
+
+.color{
+  color: #1a237e;
+  font-size: .9em;
+}
+.blackFont{
+  font-style: black;
 }
 /*
 //iphone 6+*/
@@ -34,6 +52,11 @@ and (-webkit-min-device-pixel-ratio: 3) {
   #new-secret{
     margin-bottom: 0px !important;
   }
+
+
+
+
+
 }
 
 /*//all other smaller devices*/
@@ -42,6 +65,8 @@ and (-webkit-min-device-pixel-ratio: 3) {
   #new-secret{
     margin-bottom: 0px;
   }
+
+
 
  }
 
