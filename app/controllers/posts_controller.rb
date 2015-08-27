@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	require 'symmetric-encryption'
 
 	before_action :authorized?
 

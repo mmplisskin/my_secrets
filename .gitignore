@@ -15,6 +15,7 @@
 
 # Ignore application configuration
 /config/application.yml
+/symmetric-encryption.yml
 
 #ignore redis bs
 
