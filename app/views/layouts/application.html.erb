@@ -17,12 +17,31 @@
 
   <%= render 'layouts/nav' %>
 
-    <body class="<%= controller_name %> <%= action_name %> grey lighten-2">
+    <body class="<%= controller_name %> <%= action_name %> blue-grey darken-4">
+
+
 
 
       <!-- <div class="container"> -->
 
         <div class="container">
+
+
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>Login</h4>
+                <div class="row center">
+                  <a href="/auth/facebook" class=" indigo darken-3 waves-effect waves-green btn"><i class="fa fa-facebook"></i> Facebook</a>
+                </div>
+                <div class="row center">
+                  <a href="/auth/google" class=" red darken-4 waves-effect waves-green btn"><i class="fa fa-google-plus"></i>&nbsp&nbsp Google</a>
+                </div>
+            </div>
+            <div class="modal-footer center">
+              <h6 class="italic light">My Secrets does not store your password, and will never access, post, or view anything  on your account.</h6>
+            </div>
+          </div>
+
 
           <% flash.each do |name, msg| %>
           <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
@@ -39,8 +58,10 @@
     <!-- </div> -->
     <script src="//maps.googleapis.com/maps/api/js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
-
-
+    <script type="text/javascript">
+      window.opener.location = '<%= @redirect_to %>';
+      window.close();
+    </script>
 
 
   </body>

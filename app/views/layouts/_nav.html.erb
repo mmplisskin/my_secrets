@@ -1,24 +1,30 @@
 
 <div class="navbar-fixed">
-   <nav class="indigo darken-4">
+   <nav class="indigo darken-2">
      <div class="nav-wrapper container">
        <div class="left">
          <a class="logo" href="/posts"><i class="fa fa-lock"> Secrets</i></a>
       </div>
       <div class="right">
+        <ul>
+
+          <li>
+            <a href="/about" class="fa fa-question"> About</a>
+          </li>
          <% if current_ouser %>
-           <ul>
+           <!-- <ul> -->
              <li>
                <a class="fa fa-sign-out" rel="nofollow" data-method="delete" href="/logout">Log Out</a>
              </li>
-           </ul>
+           <!-- </ul> -->
          <% else %>
-          <ul>
+          <!-- <ul> -->
               <li>
-                <a href="#modal1" id="download-button" class=" modal-trigger">Login</a>
+                <a href="#modal1" id="download-button" class="modal-trigger">Login</a>
             </li>
-          </ul>
+          <!-- </ul> -->
          <% end %>
+        </ul>
       </div>
      </div>
    </nav>
