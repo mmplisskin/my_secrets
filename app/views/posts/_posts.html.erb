@@ -5,30 +5,25 @@
 		</div>
 	</div>
 </div>
-<div class = "row ">
+<div class = "row">
 	<div class="card-panel col s12 lighten-5 blue-grey inset-shadow">
-
-
-<div class="card-panel col s12 secrets grey lighten-5">
-		<br>
-
-
-
+		<div class="card-panel col s12 secrets grey lighten-5">
 		<div class="col s12">
+			<% if @current_ouser.posts.length == 0 %>
+				<h5 class=" lighten-5 blue-grey-text"> Add Some Secrets to get started. </h5>
+				<p class="flow-text"> Secrets can be online account passwords, letters, financial imformation, instructions for others, or even personal thoughts.
+			<% end %>
+
 			<% if @current_ouser.latitude && @current_ouser.longitude %>
 				<% if @current_ouser.posts.length > 0 %>
 					<div class="col s12">
-						<div class="col s6 map">
-
+						<div class="col s12 map m6">
+							<br>
 							<div id = "googleMap"></div>
-
 						</div>
-						<% else %>
-							<h5> Add Some Secrets to get started. </h5>
-							<p class="flow-text"> Secrets can be online account passwords, letters, financial imformation, instructions for others, or even personal thoughts.
-						<% end %>
+				<% end %>
 					<div class="row">
-						<div class="col s6 offset-s center">
+						<div class="col s12p offset-s center m6">
 							<% if @current_ouser.posts.length > 0 %>
 								<h5>
 									Your secrets will be delivered in <%=  time_ago_in_words(@current_ouser.updated_at + 30.days)%>
@@ -43,23 +38,20 @@
 							<% end %>
 						</div>
 					</div>
-					<% end %>
+				<% end %>
 				</div>
-			</div>
+		</div>
 
 			<div class = "row">
 				<div class ="col s12 secret-buttons">
-
-						<a href="/posts/new" class="btn waves-effect waves-light grey darken-4 tooltipped" data-position="top" data-delay="10" data-tooltip="New Secret" id="new-secret"><i class="fa fa-plus"></i> New Secret</a>
+						<a href="/posts/new" class="btn waves-effect waves-light grey darken-4 tooltipped" data-position="bottom" data-delay="10" data-tooltip="Passwords, Financial Imformation, Letters etc." id="new-secret"><i class="fa fa-plus"></i> New Secret</a>
 						<% if @current_ouser.posts.length > 0 %>
-							<a class = "btn waves-effect waves-light indigo darken-3 z-depth-1 tooltipped" data-position="top" data-delay="10" data-tooltip="Check in"  id ="okbtn" >
+							<a class = "btn waves-effect waves-light indigo darken-3 z-depth-1" id ="okbtn" >
 								<i class ="" id='spinner' ></i>
 							</a>
 						<% end %>
 					</div>
-				</div>
-
-
+			</div>
 
 	</div>
 
@@ -82,47 +74,34 @@
 		      <li>
 		        <div class="collapsible-header">
 							<div class="row">
-							<div class="col s10 blackFont">
-								<%=post.title%>
-							</div>
-							<div class="col s2">
-								<%= link_to "edit", edit_post_path(post.id), class:"edit-link"%>
+								<div class="col s10 blackFont">
+									<%=post.title%>
+								</div>
+								<div class="col s2">
+									<%= link_to "edit", edit_post_path(post.id), class:"edit-link"%>
+								</div>
 							</div>
 						</div>
-						</div>
-		        <div class="collapsible-body">
 
+		        <div class="collapsible-body">
 								<p class="flow-text"><%= post.description %></p>
-								<!-- <h6> -->
 								<div class="collapsible-header color">
 									<% post.recipients.each do |r| %>
 										<%= r.email %>
 										<% end %>
 								</div>
-							<!-- </h6> -->
 								<div class="collapsible-header">
 								<h6>
 									<div class="modify">
-
-
-									<a class="fa fa-trash-o trash-link" rel="nofollow" data-method="delete" href="/posts/<%=post.id%>"> Delete</a>
-								</div>
+										<a class="fa fa-trash-o trash-link" rel="nofollow" data-method="delete" href="/posts/<%=post.id%>"> Delete</a>
+									</div>
 								</h6>
 							</div>
-
-
-		      </li>
-
+						</div>
+		  	</li>
 				<% end %>
-		  </ul>
-	<% end %>
+		</ul>
 	</div>
-
-
+<% end %>
 </div>
-
-
-</div>
-<div class = "italic center">
-	<p>"Secrets are things we give to others to keep for us." - Elbert Hubbard</p>
 </div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'static_pages/about'
+
   get 'recipients/index'
   get 'recipients/show'
   get 'recipients/new'
@@ -7,7 +9,9 @@ Rails.application.routes.draw do
   get 'recipients/update'
   get 'recipients/destroy'
 
-
+  # resources :static_pages
+  get 'about' => "static_pages#about"
+  # get '/static_pages/about' => 'static_pages#about'
   #routes for session
   get "login"     => 'sessions#new'
   post "login"    => 'sessions#create'

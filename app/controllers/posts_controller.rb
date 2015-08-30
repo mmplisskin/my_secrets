@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-	require 'symmetric-encryption'
 
+	require 'symmetric-encryption'
 	before_action :authorized?
 
 	def index
