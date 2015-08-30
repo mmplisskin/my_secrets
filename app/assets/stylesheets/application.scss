@@ -2,6 +2,12 @@
  *= require_self
  *= require bootstrap-tagsinput
 */
+.lengthen{
+    min-height: 80vh;
+}
+.lengthen-more{
+    min-height: 85vh;
+}
 
 
 
@@ -176,7 +182,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 }
 
 .posts{
-  height: 100vh;
+
   background: rgba(108,150,167,1);
   background: -moz-linear-gradient(top, rgba(108,150,167,1) 0%, rgba(55,99,123,0.99) 2%, rgba(47,81,122,0.85) 57%, rgba(62,179,169,0.35) 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(108,150,167,1)), color-stop(2%, rgba(55,99,123,0.99)), color-stop(57%, rgba(47,81,122,0.85)), color-stop(100%, rgba(62,179,169,0.35)));
@@ -263,4 +269,15 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 
 .heavy-font{
   font-weight: 500;
+}
+
+
+.lengthen {
+  display: flex;
+  min-height: 85vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
