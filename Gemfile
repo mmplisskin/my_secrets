@@ -43,6 +43,8 @@ gem 'font-awesome-sass'
 
 gem 'clockwork'
 
+# gem 'raindrops',  '~> 0.14.0'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'

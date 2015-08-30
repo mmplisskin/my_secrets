@@ -20,31 +20,31 @@ release:
   # containing the actual symmetric encryption key
   private_rsa_key: |
     -----BEGIN RSA PRIVATE KEY-----
-    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
+    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
     -----END RSA PRIVATE KEY-----
 
 
@@ -53,8 +53,8 @@ release:
     -
       # Filename containing Symmetric Encryption Key encrypted using the
       # RSA public key derived from the private key above
-      key_filename: /etc/rails/keys/my_secrets_release.key
-      iv_filename:  /etc/rails/keys/my_secrets_release.iv
+      key_filename: /home/rails/config/my_secrets_release.key
+      iv_filename:  /home/rails/config/my_secrets_release.iv
       cipher_name:  aes-256-cbc
       # Base64 encode encrypted data without newlines
       encoding:     :base64strict
@@ -66,31 +66,31 @@ production:
   # containing the actual symmetric encryption key
   private_rsa_key: |
     -----BEGIN RSA PRIVATE KEY-----
-    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
+    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
     -----END RSA PRIVATE KEY-----
 
 
@@ -99,8 +99,8 @@ production:
     -
       # Filename containing Symmetric Encryption Key encrypted using the
       # RSA public key derived from the private key above
-      key_filename: /etc/rails/keys/my_secrets_production.key
-      iv_filename:  /etc/rails/keys/my_secrets_production.iv
+      key_filename: /home/rails/config/my_secrets_release.key
+      iv_filename:  /home/rails/config/my_secrets_release.iv
       cipher_name:  aes-256-cbc
       # Base64 encode encrypted data without newlines
       encoding:     :base64strict
