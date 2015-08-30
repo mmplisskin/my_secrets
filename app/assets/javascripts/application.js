@@ -11,7 +11,7 @@
 $(document).ready(function(){
 
 
-
+  $(".button-collapse").sideNav();
 
   $("#tags").tagsinput('items')
 

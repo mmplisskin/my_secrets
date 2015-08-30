@@ -3,29 +3,71 @@
    <nav class="indigo darken-2">
      <div class="nav-wrapper container">
        <div class="left">
-         <a class="logo" href="/posts"><i class="fa fa-lock"> Secrets</i></a>
+         <a class="brand-logo" href="/posts"><i class="fa fa-lock"> My Secrets</i></a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse">Menu</a>
       </div>
-      <div class="right">
-        <ul>
 
+        <ul class="right hide-on-med-and-down">
           <li>
             <a href="/about" class="fa fa-question"> About</a>
           </li>
          <% if current_ouser %>
-           <!-- <ul> -->
-             <li>
-               <a class="fa fa-sign-out" rel="nofollow" data-method="delete" href="/logout">Log Out</a>
-             </li>
-           <!-- </ul> -->
+           <li>
+             <a href="/posts" class="fa fa-user-secret"> Secrets</a>
+           </li>
+           <li>
+             <a class="fa fa-sign-out" rel="nofollow" data-method="delete" href="/logout">Log Out</a>
+           </li>
          <% else %>
-          <!-- <ul> -->
+            <li>
+              <a href="#modal1" id="download-button" class="modal-trigger">Login</a>
+            </li>
+         <% end %>
+        </ul>
+
+        <ul class="side-nav" id="mobile-demo">
+          <li>
+            <a href="/about" class="fa fa-question"> About</a>
+          </li>
+         <% if current_ouser %>
+           <li>
+             <a href="/posts" class="fa fa-user-secret"> Secrets</a>
+           </li>
+           <li>
+             <a class="fa fa-sign-out" rel="nofollow" data-method="delete" href="/logout">Log Out</a>
+           </li>
+         <% else %>
               <li>
                 <a href="#modal1" id="download-button" class="modal-trigger">Login</a>
             </li>
-          <!-- </ul> -->
          <% end %>
         </ul>
-      </div>
+
+
      </div>
    </nav>
  </div>
+
+<script>
+
+</script>
+
+<!-- <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
+  </nav> -->
