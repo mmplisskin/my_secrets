@@ -13,9 +13,9 @@ class ChargesController < ApplicationController
     )
 
     charge = Stripe::Charge.create(
-      :customer    => customer.id,
+      :customer    => Ouser.id,
       :amount      => @amount,
-      :description => 'Rails Stripe customer',
+      :description => 'My Secrets yearly payment.',
       :currency    => 'usd'
     )
 
