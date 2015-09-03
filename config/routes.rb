@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   resources :ousers
 
+  resources :charges
+
 
 
   root 'sessions#new'
