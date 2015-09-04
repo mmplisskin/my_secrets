@@ -13,9 +13,92 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <%= yield %>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
-  <script type="text/javascript">
-</body>
+
+
+  <%= render 'layouts/nav' %>
+
+    <body class="<%= controller_name %> <%= action_name %>">
+<!-- blue-grey darken-4 -->
+
+
+
+      <!-- <div class="container"> -->
+
+        <div class="container lengthen">
+
+
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h2>Login</h2>
+
+                <div class="row">
+                  <h5 class="light indigo-text lighten-5-text col m11 offset-m1">Make sure to use the same provider every time as to not create duplicate accounts.</h5>
+                </div>
+
+                <div class="row">
+                  <!-- <div class="col m12 s12"> -->
+                    <a href="/auth/google" class=" red darken-4 waves-effect waves-green btn btn-large col m4 s12 offset-m1"><i class="fa fa-google-plus"></i>&nbsp&nbsp Google</a>&nbsp
+                    <a href="/auth/facebook" class=" indigo darken-3 waves-effect waves-green btn btn-large col m4 s12 offset-m2"><i class="fa fa-facebook"></i> Facebook</a>
+
+                  <!-- </div> -->
+                </div>
+
+
+            </div>
+            <div class="modal-footer center">
+              <h6 class="italic light">My Secrets does not store your password, and will never access, post, or view anything  on your account.</h6>
+            </div>
+          </div>
+
+
+          <% flash.each do |name, msg| %>
+          <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+            <%= msg %>
+          <% end %>
+        <% end %>
+
+          <%= yield %>
+      </div>
+      <footer class="page-footer blue-grey darken-4 darken-4">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <!-- <h5 class="white-text">My Secrets</h5> -->
+              <p class="grey-text text-lighten-4"></p>
+            </div>
+            <!-- <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Our Team</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Max Plisskin</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+              </ul>
+            </div> -->
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2015 My Secrets
+          <a class="grey-text text-lighten-4 right" href="mailto:mysecretsnotify@gmail.com">Contact The Developer</a>
+          </div>
+        </div>
+      </footer>
+
+    <!-- </div> -->
+
+
+    <script src="//maps.googleapis.com/maps/api/js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+
+
+
+
+  </body>
+
 </html>

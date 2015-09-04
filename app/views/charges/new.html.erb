@@ -1,38 +1,101 @@
 <div class="blue-grey lighten-4 inset-shadow">
   <div class = "row">
-    <div class="col s8 offset-s1">
+    <div class="col s10 offset-s1">
       <h1 class="text-shadow">
-        <%#= current_user.email %>
+        Hi,
         <%= current_user.name %></h1>
+        <h2> Please pay $14.99 for a full year subscription to My Secrets </h2>
+        <h6> Stripe is used to process all payments securely</h6>
+        <br>
 
-<%= form_tag charges_path do %>
-  <article>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
-  </article>
+      <%= form_tag charges_path, :class => 'charge-form' do %>
+
 
   <script src="https://checkout.stripe.com/checkout.js"
-  class="stripe-button"
-          data-panel-label="Subscribe"
+          class="stripe-button"
+          data-panel-label="Pay"
           data-label="Pay Now"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A year of My Secrets"
-          data-amount="500"
+          data-amount="1499"
           data-bitcoin = "true"
           data-email = "<%= current_user.email %>"
-          data-locale="auto"></script>
-<% end %>
+          data-locale="auto"></script><% end %>
 
     </div>
-    <div class="card-panel col s12 secrets grey lighten-5">
-		<div class="col s12">
-			<% if @current_user %>
-				<h5 class=" lighten-5 blue-grey-text">  </h5>
-				<p class="flow-text"> Secrets can be online account passwords, letters, financial imformation, instructions for others, or even personal thoughts.
-			<% end %>
-    </div>
-    </div>
+
+    <br>
+    <br>
 
   </div>
+</div>
+<div class = "divider"></div>
+<br>
+
+
+<div class="section card-panel">
+
+  <h3 class="indigo-text lighten-5-text">We manage your digital legacy so that you do not have to worry.</h3>
+  <div class = "divider"></div>
+
+  <div class="row">
+
+    <div class="col m4 s12 center">
+      <br>
+      <h1 class="center">
+        <!-- <i class="fa fa-lock"></i> -->
+      </h1>
+
+      <h4 class="heavy-font">
+        Secure System
+      </h4>
+
+
+        <h6 class="light deep-purple-text text-darken-4">
+          Our security is based on the Payment Card Industry security standards. Even if our system is breached your secrets are encrypted. You can trust that your secrets will never unwillingly be read.
+        </h6>
+    </div>
+
+    <div class="col m4 s12 center">
+      <br>
+      <h1 class="center">
+        <!-- <i class="fa fa-check"></i> -->
+      </h1>
+
+      <h4 class="heavy-font">
+        Easy to Use
+      </h4>
+
+        <h6 class="light deep-purple-text text-darken-4">
+          Add your Secrets
+          <br>
+          Check in Monthly
+          <br>
+          Pay $30 Yearly
+          <br>
+          Worry Free
+        </h6>
+    </div>
+
+    <div class="col m4 s12 center">
+      <br>
+      <h1 class="center">
+        <!-- <i class="fa fa-bell"></i> -->
+      </h1>
+
+      <h4 class="heavy-font">
+        Notifications
+      </h4>
+
+        <h6 class="light deep-purple-text text-darken-4">
+          We will be sure to notify your chosen recipients when you have gone inactive. Your secrets will be delivered weekly until reciept has been confirmed.
+        </h6>
+    </div>
+  </div>
+
+
+</div>
+<div class = "italic center">
+<p>My Secrets is not responsible for anything that occurs as a result of using this service. We will do our best to keep your Secrets safe but it is up to you to check in. </p>
+</div>
 </div>
