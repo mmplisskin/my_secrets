@@ -13,12 +13,12 @@ class SessionsController < ApplicationController
 			if @ouser.created_at > 1.minute.ago
 			 	UserMailer.delay.welcome_email(@ouser.id)
 			# UserMailer.welcome_email(@ouser.id).deliver
-
-
-
 			end
 		end
 	 		redirect_to posts_path
+		rescue
+			flash[:notice] = "Please select the provider that you already have an account with ( i.e. if you chose Facebook use your Google account. )"
+			redirect_to root_path
 	end
 
 	def destroy
