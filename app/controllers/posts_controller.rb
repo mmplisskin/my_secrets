@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 
 	require 'symmetric-encryption'
-	before_action :authorized?
+	# before_action :authorized?
+	before_action :trial
 
 	def index
 
@@ -94,6 +95,13 @@ class PostsController < ApplicationController
 
 		redirect_to posts_path
 	end
+
+	def trial
+		if (current_ouser.paid == false && current_ouser.created_at < 30.days.ago)
+			redirect_to new_charge_path
+		end
+	end
+
 
 	private
 		def post_params

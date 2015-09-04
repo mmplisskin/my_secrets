@@ -27,10 +27,21 @@ Rails.application.routes.draw do
 
   resources :ousers
 
-  require 'sidekiq/web'
-  mount Sidekiq::Web => '/deadppl'
+  resources :charges
+
+
 
   root 'sessions#new'
+
+
+  require "sidekiq/web"
+  Sidekiq::Web.use Rack::Auth::Basic do |username, password|
+    username == ENV["SIDEKIQ_USERNAME"] && password == ENV["SIDEKIQ_PASSWORD"]
+  end if Rails.env.production?
+  mount Sidekiq::Web, at: "/sidekiq"
+
+
+
 
 
 end

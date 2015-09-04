@@ -22,5 +22,9 @@ module Clockwork
     `rake user:notify`
   }
 
+  every(1.day , 'rake user subscribe'){
+    `rake user:subscribe`
+  }
+
 
 end

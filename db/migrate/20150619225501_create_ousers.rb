@@ -11,7 +11,8 @@ class CreateOusers < ActiveRecord::Migration
       t.datetime :last_update
       t.float :latitude
       t.float :longitude
-
+      t.boolean :paid, default: false
+      t.datetime :last_payment
       t.timestamps null: false
     end
   end
