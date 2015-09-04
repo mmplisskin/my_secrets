@@ -7,7 +7,7 @@ class Ouser < ActiveRecord::Base
 
 	class << self
 	  def from_omniauth(auth_hash)
-	    ouser = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])
+			ouser = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])
 	    ouser.name = auth_hash['info']['name']
 	    ouser.location = auth_hash['info']['location']
 	    ouser.image_url = auth_hash['info']['image']
