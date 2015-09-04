@@ -1,3 +1,10 @@
+<div class="blue-grey lighten-4 inset-shadow">
+  <div class = "row">
+    <div class="col s8 offset-s1">
+      <h1 class="text-shadow">
+        <%= current_user.email %>
+        <%= current_user.name %></h1>
+
 <%= form_tag charges_path do %>
   <article>
     <label class="amount">
@@ -13,5 +20,19 @@
           data-description="A year of My Secrets"
           data-amount="500"
           data-bitcoin = "true"
+          data-email = "<%= current_user.email %>"
           data-locale="auto"></script>
 <% end %>
+
+    </div>
+    <div class="card-panel col s12 secrets grey lighten-5">
+		<div class="col s12">
+			<% if @current_user %>
+				<h5 class=" lighten-5 blue-grey-text"> Add Some Secrets to get started. </h5>
+				<p class="flow-text"> Secrets can be online account passwords, letters, financial imformation, instructions for others, or even personal thoughts.
+			<% end %>
+    </div>
+    </div>
+
+  </div>
+</div>

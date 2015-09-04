@@ -1,7 +1,8 @@
 class Ouser < ActiveRecord::Base
+	require 'pry'
 	has_many :posts
 	has_many :recipients
-	# 
+	#
 	# attr_accessor :latitude, :longitude,
 
 	class << self
@@ -11,7 +12,7 @@ class Ouser < ActiveRecord::Base
 	    ouser.location = auth_hash['info']['location']
 	    ouser.image_url = auth_hash['info']['image']
 	    # ouser.url = auth_hash['info']['urls'][ouser.provider.capitalize]
-	    ouser.email= auth_hash['info']['email']
+	    ouser.email = auth_hash['info']['email']
 	    ouser.save!
 	    ouser
 	  end

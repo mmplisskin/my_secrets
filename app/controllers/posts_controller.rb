@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 
 	require 'symmetric-encryption'
-	before_action :authorized?
+	# before_action :authorized?
+	before_action :trial
 
 	def index
 
@@ -110,4 +111,8 @@ class PostsController < ApplicationController
 				the_post.recipients << person
 			end
 		end
+	end
+
+	def trial
+
 	end
