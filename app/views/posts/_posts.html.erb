@@ -2,10 +2,19 @@
 	<div class = "row">
 		<div class="col s8 offset-s1">
 			<h1 class="text-shadow">Hi, <%=@current_ouser.name %></h1>
-			<% if @current_ouser.created_at > 30.days.ago %>
+			<!-- if user has not paid and is in trial mode -->
+			<% if @current_ouser.created_at > 30.days.ago && @current_ouser.paid == false %>
 				<h5 class='light'> <%= distance_of_time_in_words(Time.now, @current_ouser.created_at + 30.days )%>
 					 left to try out My Secrets or <a href="/charges/new"> subscribe</a></h5>
+
+			<!-- If user has paid -->
+			<% elsif @current_ouser.paid == true && @current_ouser.last_payment < 330.days.ago %>
+				<h5 class='light'> We hope you are enjoying My Secrets. In
+					<%= time_ago_in_words(@current_ouser.last_payment + 1.year) %> your subscription will expire. <a href="/charges/new"> Subscribe</a></h5>
+				</h5>
+
 			<% end %>
+
 		</div>
 	</div>
 </div>

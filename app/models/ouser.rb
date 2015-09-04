@@ -8,8 +8,8 @@ class Ouser < ActiveRecord::Base
 	class << self
 	  def from_omniauth(auth_hash)
 			ouser = find_or_create_by(:email => auth_hash.info.email)
-			if (ouser.provider && ouser.provider != auth_hash['provider'])
-			
+			if (ouser.provider !=nil && ouser.provider != auth_hash['provider'])
+
 			return
 			end
 	    ouser.name = auth_hash['info']['name']

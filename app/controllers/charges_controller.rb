@@ -1,5 +1,5 @@
 class ChargesController < ApplicationController
-
+  # require 'pry'
   def new
   end
 
@@ -18,6 +18,14 @@ class ChargesController < ApplicationController
       :description => 'My Secrets yearly payment.',
       :currency    => 'usd'
     )
+  user = Ouser.find(current_ouser.id)
+  user.paid = true
+  user.last_payment = Time.now
+  user.save
+  flash[:notice] = "Thanks for your paying!"
+  redirect_to posts_path
+  # ouser.save!
+  # binding.pry
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

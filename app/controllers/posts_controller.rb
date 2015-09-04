@@ -96,6 +96,13 @@ class PostsController < ApplicationController
 		redirect_to posts_path
 	end
 
+	def trial
+		if (current_ouser.paid == false && current_ouser.created_at < 30.days.ago)
+			redirect_to new_charge_path
+		end
+	end
+
+
 	private
 		def post_params
 		  params.require(:post).permit(:title, :description, :contact_email, :last_update, recipients_attributes: [:email])
@@ -111,8 +118,4 @@ class PostsController < ApplicationController
 				the_post.recipients << person
 			end
 		end
-	end
-
-	def trial
-
 	end

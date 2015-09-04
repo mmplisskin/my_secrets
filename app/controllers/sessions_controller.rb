@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
 			end
 		end
 	 		redirect_to posts_path
+
 		rescue
 			flash[:notice] = "Please select the provider that you already have an account with ( i.e. if you chose Facebook use your Google account. )"
 			redirect_to root_path
