@@ -9,12 +9,16 @@ Rails.application.routes.draw do
   get 'recipients/update'
   get 'recipients/destroy'
 
+
+
   # resources :static_pages
   get 'about' => "static_pages#about"
   # get '/static_pages/about' => 'static_pages#about'
   #routes for session
   get "login"     => 'sessions#new'
   post "login"    => 'sessions#create'
+  get "otp/:id" => 'sessions#otp', as: :otp
+  post "otp/:id"    => 'sessions#otpcreate'
   delete "logout" => 'sessions#destroy'
 
   #route for oauth

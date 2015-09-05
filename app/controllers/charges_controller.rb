@@ -5,7 +5,7 @@ class ChargesController < ApplicationController
 
   def create
     # Amount in cents
-    @amount = 2500
+    @amount = 1499
 
     customer = Stripe::Customer.create(
       :email => 'example@stripe.com',
@@ -22,7 +22,7 @@ class ChargesController < ApplicationController
   user.paid = true
   user.last_payment = Time.now
   user.save
-  flash[:notice] = "Thanks for your paying!"
+  flash[:notice] = "Thank for your payment!"
   redirect_to posts_path
   # ouser.save!
   # binding.pry

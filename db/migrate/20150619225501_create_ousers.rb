@@ -8,6 +8,7 @@ class CreateOusers < ActiveRecord::Migration
       t.string :location
       t.string :image_url
       t.string :url
+      t.string :otp_secret_key
       t.datetime :last_update
       t.float :latitude
       t.float :longitude
