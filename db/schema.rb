@@ -24,13 +24,14 @@ ActiveRecord::Schema.define(version: 20150619234643) do
     t.string   "location"
     t.string   "image_url"
     t.string   "url"
+    t.string   "otp_secret_key"
     t.datetime "last_update"
     t.float    "latitude"
     t.float    "longitude"
-    t.boolean  "paid",         default: false
+    t.boolean  "paid",           default: false
     t.datetime "last_payment"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "post_recipients", force: :cascade do |t|

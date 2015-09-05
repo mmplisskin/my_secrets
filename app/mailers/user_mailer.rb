@@ -50,6 +50,25 @@ class UserMailer < ApplicationMailer
 
     end
 
+    def otp_email(ouser_id, otp_code)
+        @ouser = Ouser.find(ouser_id)
+        @email = @ouser.email
+        @name = @ouser.name
+        @title = "Your One time Password #{@ouser.name}"
+        @subject = "OTP login! #{@ouser.name}"
+        @greeting = "Your One time Password"
+        @info = otp_code
+        @info2 = "Please make sure to check in so we know that everything is ok."
+      # else
+        # @title = "Cheers #{ouser.name}"
+        # @subject = "Good to know that everything is still awesome #{ouser.name}!"
+        # @greeting = "Welcome back #{ouser.name}. Your secrets are still safe!"
+      # end
+
+      mail to: @email, subject: @subject
+    end
+
+
 
 
 

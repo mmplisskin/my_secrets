@@ -60,6 +60,8 @@ gem 'omniauth-facebook'
 #allows auth via google
 gem 'omniauth-google-oauth2'
 
+gem 'active_model_otp'
+
 # gem "rails-bootstrap-helpers"
 
 

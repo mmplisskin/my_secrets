@@ -2,6 +2,7 @@ class Ouser < ActiveRecord::Base
 	require 'pry'
 	has_many :posts
 	has_many :recipients
+	has_one_time_password
 	#
 	# attr_accessor :latitude, :longitude,
 
@@ -20,6 +21,7 @@ class Ouser < ActiveRecord::Base
 	    ouser.image_url = auth_hash['info']['image']
 	    # ouser.url = auth_hash['info']['urls'][ouser.provider.capitalize]
 	    ouser.email = auth_hash['info']['email']
+			ouser.otp_secret_key
 	    ouser.save!
 	    ouser
 	  end
