@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 	extend ActiveModel::Callbacks
 	include ActiveModel::Validations
 	include ActiveModel::OneTimePassword
-	define_model_callbacks :create
+
 
 require 'pry'
 	def new
@@ -27,11 +27,10 @@ require 'pry'
 			# UserMailer.welcome_email(@ouser.id).deliver
 			end
 		end
-			# 	redirect_to posts_path
 
-		# rescue
-		# 	flash[:notice] = "Please select the provider that you already have an account with ( i.e. if you chose Facebook use your Google account. )"
-		# 	redirect_to root_path
+		rescue
+			flash[:notice] = "Please select the provider that you already have an account with ( i.e. if you chose Facebook use your Google account. )"
+			redirect_to root_path
 	end
 
 	def destroy
@@ -50,7 +49,7 @@ require 'pry'
 			  session[:ouser_id] = @ouser.id
 				redirect_to posts_path
 		else
-			flash[:notice] = "Please double check your otp passcode"
+			flash[:notice] = "Please double check the passcode"
 			redirect_to otp_path
 		end
 
