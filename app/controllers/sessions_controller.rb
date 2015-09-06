@@ -45,7 +45,7 @@ require 'pry'
 		@ouser = Ouser.find(params[:id])
 		@token = (params[:token])
 		# binding.pry
-		if @ouser.authenticate_otp(@token)
+		if @ouser.authenticate_otp(@token, drift: 60)
 			  session[:ouser_id] = @ouser.id
 				redirect_to posts_path
 		else
