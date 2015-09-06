@@ -44,7 +44,7 @@ require 'pry'
 	def otpcreate
 		@ouser = Ouser.find(params[:id])
 		@token = (params[:token])
-
+		# binding.pry
 		if @ouser.authenticate_otp(@token)
 			  session[:ouser_id] = @ouser.id
 				redirect_to posts_path

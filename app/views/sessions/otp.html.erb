@@ -1,13 +1,19 @@
 <div class="card-panel col s12 lighten-5 blue-grey inset-shadow secret-form center">
-	<div class="card-panel modify">
+	<h2> Please check your email for a one time password</h2>
+	<br>
+	<div class="card-panel">
 	<br>
 	<div class="row">
+		<div class="input-field col s12 m8 offset-m2">
 
     <%= form_tag do %>
-      <%= label_tag(:token, "One Time Token") %>
-      <%= text_field_tag(:token) %>
-      <%= submit_tag "Login", class: "btn waves-effect waves-light deep-purple" %>
+      <%= text_field_tag(:token)%>
+			<label for="Token" data-error="wrong" data-success="right">Token</label>
+			<div class="row">
+	    <%= submit_tag "Login", class: "btn btn-large otp" %>
+		</div>
     <% end %>
+	</div>
     </div>
   </div>
 </div>

@@ -9,7 +9,11 @@
     min-height: 85vh;
 }
 
+.otp.btn{
 
+  position: relative;
+  top: 2.5em;  
+}
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
