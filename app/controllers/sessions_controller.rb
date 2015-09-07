@@ -37,13 +37,12 @@ require 'pry'
 		session.delete(:ouser_id)
 		redirect_to login_path
 	end
-
 	def otp
 	end
 
 	def otpcreate
 		@ouser = Ouser.find(params[:id])
-		@token = (params[:token])
+		@token = (params[:token].strip)
 		# binding.pry
 		if @ouser.authenticate_otp(@token, drift: 120)
 			  session[:ouser_id] = @ouser.id
