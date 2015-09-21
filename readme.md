@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/mmplisskin/my_secrets.svg?branch=travis)](https://travis-ci.org/mmplisskin/my_secrets)
 #My Secrets
 ###my Secrets is a digital locker that emails recipients when the user goes inactive 
-Deployed at [my-secrets.co](my-secrets.co)
+Deployed at [my-secrets.co](http://www.my-secrets.co)
  <br />
 
 ##Tech Used
@@ -10,17 +10,11 @@ Deployed at [my-secrets.co](my-secrets.co)
 - Postgress
 - Redis
 - JS/Jquery
-
-## Gems
-
 - Oauth
 - Sidekiq
 - Clockwork
 - Figaro
 - 12 factor
-
-## Highlights
-
 
 #### Testing
 - Rspec controller and model spec
